@@ -1,6 +1,7 @@
 import React, { PureComponent as Component } from 'react';
 import App from './App';
 
+
 class Session extends Component {
   render () {
     return (
