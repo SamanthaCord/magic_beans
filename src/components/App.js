@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Home from './Home';
 import Session from './Session';
-
+import Steps from './Steps';
 
 import '../index.css';
 
@@ -11,9 +11,11 @@ class App extends Component {
     super(props);
     this.state = {
       showSession: false,
-      showHome: true
+      showHome: true,
+      pageCount: 0
     };
     this._session = this._session.bind(this);
+    this._steps = this._steps.bind(this);
   }
 
   _session() {
@@ -21,12 +23,16 @@ class App extends Component {
     this.setState({showHome: false});
   }
 
+  _steps() {
+    this.setState({pageCount: 2});
+  }
+
   render() {
     return (
       <div>
         {this.state.showSession ? <Session /> : null}
-        {this.state.showHome ? <Home show={() => this._session()}/> : null}
-
+        {this.state.pageCount === 2 ? <Steps />: <Home show={() => this._session()} count={() => this._steps()} />}
+        <Steps />
       </div>
     );
   }

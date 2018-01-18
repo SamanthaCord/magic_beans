@@ -11,6 +11,7 @@ class Home extends Component {
   _handleClick() {
     console.log("the button was clicked");
     this.props.show()
+    this.props.count()
   }
 
   render() {

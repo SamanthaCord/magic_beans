@@ -11,5 +11,53 @@ body {
   width: 100%;
   height: 100%;
   background-color: red;
+  z-index: 3;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+}
+
+#one {
+  display: inline-block;
+  position: relative;
+  height: 50em;
+  width: 20%;
+  background-color: blue;
+}
+
+#two {
+  display: inline-block;
+  position: relative;
+  width: 20%;
+  height: 50em;
+  background-color: red;
+}
+
+#three {
+  display: inline-block;
+  position: relative;
+  height: 50em;
+  width: 20%;
+  background-color: pink;
+}
+
+#four {
+  display: inline-block;
+  position: relative;
+  height: 50em;
+  width: 20%;
+  background-color: green;
+}
+
+#five {
+  display: inline-block;
+  position: relative;
+  height: 50em;
+  width: 20%;
+  background-color: yellow;
   z-index: 2;
 }
