@@ -14,7 +14,8 @@ class App extends Component {
       showSession: false,
       showHome: true,
       pageCount: 0,
-      stepOne: false
+      stepOne: false,
+      identity: []
     };
     this._session = this._session.bind(this);
     this._steps = this._steps.bind(this);
@@ -39,16 +40,25 @@ class App extends Component {
     console.log("working on opening step 1");
   }
 
+  _saveInput(e) {
+    const update = this.state.identity.slice()
+
+    this.setState({identity: [...update, e]}, function() {
+      localStorage['stepone'] = JSON.stringify(this.state.identity);
+    })
+  }
+
   render() {
     return (
       <div>
         {this.state.showSession ? <Session hide={() => this._steps()} /> : null}
         {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()}/> : null}
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
-        {this.state.stepOne ? <One /> : null}
+        {this.state.stepOne ? <One value={(e) => this._saveInput(e)}/> : null}
       </div>
     );
   }
 }
 
 export default App;
+  // localStorage.setItem('stepone', this.state.identity.join(" ") + " " + e)

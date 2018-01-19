@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border-collapse: collapse;
 }
 
 body {
@@ -26,6 +27,13 @@ body {
   border: 40px black solid;
 }
 
+#buttonContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+}
+
 #one {
   display: inline-block;
   position: relative;
@@ -34,9 +42,13 @@ body {
   background-color: blue;
 }
 
-/*#one:hover {
-  width: 25%;
-}*/
+#one:hover {
+  width: 30%;
+}
+
+#buttonContainer:hover > *:not(:hover) {
+ width: 17.5%;
+}
 
 #two {
   display: inline-block;
@@ -46,9 +58,9 @@ body {
   background-color: red;
 }
 
-/*#two:hover {
-  width: 25%;
-}*/
+#two:hover {
+  width: 30%;
+}
 
 #three {
   display: inline-block;
@@ -58,9 +70,9 @@ body {
   background-color: pink;
 }
 
-/*#three:hover {
-  width: 25%;
-}*/
+#three:hover {
+  width: 30%;
+}
 
 #four {
   display: inline-block;
@@ -70,9 +82,9 @@ body {
   background-color: green;
 }
 
-/*#four:hover {
-  transform: 25%;
-}*/
+#four:hover {
+  width: 30%;
+}
 
 #five {
   display: inline-block;
@@ -83,9 +95,9 @@ body {
   z-index: 2;
 }
 
-/*#five:hover {
-  width: 25%;
-}*/
+#five:hover {
+  width: 30%;
+}
 
 #stepOneContainer {
   background-color: grey;

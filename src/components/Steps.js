@@ -37,11 +37,13 @@ class Steps extends Component {
   render () {
     return (
       <div id="wrapper">
-        <button onClick={this._handleClickOne} id="one">1</button>
-        <button onClick={this._handleClickTwo} id="two">2</button>
-        <button onClick={this._handleClickThree} id="three">3</button>
-        <button onClick={this._handleClickFour} id="four">4</button>
-        <button onClick={this._handleClickFive} id="five">5</button>
+        <div id="buttonContainer">
+          <button onClick={this._handleClickOne} id="one">1</button>
+          <button onClick={this._handleClickTwo} id="two">2</button>
+          <button onClick={this._handleClickThree} id="three">3</button>
+          <button onClick={this._handleClickFour} id="four">4</button>
+          <button onClick={this._handleClickFive} id="five">5</button>
+        </div>
       </div>
     );
   }

@@ -2,6 +2,8 @@ import React, { PureComponent as Component } from 'react';
 import App from './App';
 import Steps from './Steps';
 
+const suggestions = ["premium", "approachable", ];
+
 class One extends Component {
   constructor(props) {
     super(props);
@@ -15,8 +17,13 @@ class One extends Component {
   _handleSubmit(e) {
     e.preventDefault();
     const query = this.state.query;
-    console.log(query);
+    // console.log(query);
+    this.props.value(query)
+    this.setState({
+      query: ''
+    });
   }
+
 
   _handleChange(e) {
     this.setState({
@@ -39,11 +46,3 @@ class One extends Component {
 
 
 export default One;
-
-
-// _handleSubmit(e) {
-//   e.preventDefault();
-//   const query = this.state.query;
-//   // console.log(query);
-//   this.context.router.history.push(`/details/${query}`); //Navigate to a new page.
-// }
