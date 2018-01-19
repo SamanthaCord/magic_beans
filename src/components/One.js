@@ -15,6 +15,7 @@ class One extends Component {
     this._handleChange = this._handleChange.bind(this);
     this._handleClick = this._handleClick.bind(this);
     this.randomise = this.randomise.bind(this)
+    this._addItem = this._addItem.bind(this)
   }
 
   componentDidMount(){
@@ -49,16 +50,21 @@ class One extends Component {
     this.props.remove(i)
   }
 
+  _addItem(e) {
+    // console.log(e.target.value);
+    this.props.addItem(e.target.value)
+  }
+
   randomise() {
     let randomSuggest = this.state.suggestions.slice();
 
     return (
       <div>
-        <button>{this.state.randoms[0]}</button>
-        <button>{this.state.randoms[1]}</button>
-        <button>{this.state.randoms[2]}</button>
-        <button>{this.state.randoms[3]}</button>
-        <button>{this.state.randoms[4]}</button>
+        <button value={this.state.randoms[0]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[0]}</button>
+        <button value={this.state.randoms[1]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[1]}</button>
+        <button value={this.state.randoms[2]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[2]}</button>
+        <button value={this.state.randoms[3]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[3]}</button>
+        <button value={this.state.randoms[4]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[4]}</button>
       </div>
     )
   }

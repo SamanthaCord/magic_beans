@@ -20,7 +20,7 @@ class App extends Component {
     this._session = this._session.bind(this);
     this._steps = this._steps.bind(this);
     this._firstStep = this._firstStep.bind(this);
-
+    this._saveItem = this._saveItem.bind(this);
   }
   componentDidMount() {
     if(localStorage.getItem('stepone')){
@@ -51,6 +51,7 @@ class App extends Component {
     this.setState({identity: [...update, e]}, function() {
       localStorage['stepone'] = JSON.stringify(this.state.identity);
     })
+    console.log(e);
   }
 
   _deleteItem(i) {
@@ -63,13 +64,22 @@ class App extends Component {
     })
   }
 
+  _saveItem(e) {
+    const update = this.state.identity.slice()
+
+    this.setState({identity: [...update, e]}, function() {
+      localStorage['stepone'] = JSON.stringify(this.state.identity);
+    })
+    console.log(e);
+  }
+
   render() {
     return (
       <div>
         {this.state.showSession ? <Session hide={() => this._steps()} /> : null}
         {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()}/> : null}
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
-        {this.state.stepOne ? <One value={(e) => this._saveInput(e)} identity={this.state.identity} remove={(i) => this._deleteItem(i)} /> : null}
+        {this.state.stepOne ? <One addItem={(e) => this._saveItem(e)} value={(e) => this._saveInput(e)} identity={this.state.identity} remove={(i) => this._deleteItem(i)} /> : null}
       </div>
     );
   }
