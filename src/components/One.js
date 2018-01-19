@@ -9,13 +9,16 @@ class One extends Component {
     this.state = {
       query: '',
       suggestions: ["premium", "approachable", "innovative", "bold", "creative", "fashion", "ecommerce", "engaging", "straight forward", "cool"],
-      randoms: []
+      randoms: [],
+      questionAlts: ["what is your product / idea?", "what are your strengths?", "what is your business / idea about?"],
+      newPhrase: ''
     }
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleChange = this._handleChange.bind(this);
     this._handleClick = this._handleClick.bind(this);
-    this.randomise = this.randomise.bind(this)
-    this._addItem = this._addItem.bind(this)
+    this.randomise = this.randomise.bind(this);
+    this._addItem = this._addItem.bind(this);
+    this._changeHeading = this._changeHeading.bind(this);
   }
 
   componentDidMount(){
@@ -69,10 +72,17 @@ class One extends Component {
     )
   }
 
+  _changeHeading() {
+    console.log('change the question');
+    let newHeading = this.state.questionAlts.slice()
+    this.setState({newPhrase: newHeading.splice(Math.floor(Math.random()*newHeading.length),1)})
+  }
+
   render () {
     return (
       <div id="stepOneContainer">
-        <h1>How do you want your brand to be percieved?</h1>
+        {!this.state.newPhrase ? <h1>How do you want your brand to be percieved?</h1> : <h1>{this.state.newPhrase}</h1>}
+        <button onClick={this._changeHeading}>icon</button>
         {this.randomise()}
         <form onSubmit={this._handleSubmit}>
           <input type="search" onChange={this._handleChange} value={this.state.query}/>
