@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +18,32 @@ body {
   width: 100%;
   height: 100%;
   background-color: red;
-  z-index: 1;
+}
+
+#logo {
+  z-index: 99;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+}
+
+#exit {
+  z-index: 99;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+#exit, a {
+  color: black;
+  padding-top: 20px;
 }
 
 #wrapper {
@@ -24,7 +51,7 @@ body {
   height: 100%;
   position: absolute;
   z-index: 3;
-  border: 40px black solid;
+  border-top: 60px black solid;
 }
 
 #buttonContainer {
@@ -39,11 +66,15 @@ body {
   position: relative;
   height: 100%;
   width: 20%;
-  background-color: blue;
+  background-color: #ffffff;
+  border: none;
+  font-size: 100px;
+  font-weight: 700;
 }
 
 #one:hover {
   width: 30%;
+  background-color: #ff0018;
 }
 
 #buttonContainer:hover > *:not(:hover) {
@@ -55,11 +86,16 @@ body {
   position: relative;
   width: 20%;
   height: 100%;
-  background-color: red;
+  background-color: #000000;
+  border: none;  font-size: 100px;
+  font-weight: 700;
+  font-size: 100px;
+  color: white;
 }
 
 #two:hover {
   width: 30%;
+  background-color: #ffe501;
 }
 
 #three {
@@ -67,11 +103,15 @@ body {
   position: relative;
   height: 100%;
   width: 20%;
-  background-color: pink;
+  background-color: #ffffff;
+  border: none;
+  font-weight: 700;
+  font-size: 100px;
 }
 
 #three:hover {
   width: 30%;
+  background-color: #2020da;
 }
 
 #four {
@@ -79,11 +119,16 @@ body {
   position: relative;
   height: 100%;
   width: 20%;
-  background-color: green;
+  background-color: #000000;
+  border: none;
+  font-weight: 700;
+  font-size: 100px;
+  color: white;
 }
 
 #four:hover {
   width: 30%;
+  background-color: #0df15e;
 }
 
 #five {
@@ -91,12 +136,15 @@ body {
   position: relative;
   height: 100%;
   width: 20%;
-  background-color: yellow;
-  z-index: 2;
+  background-color: #ffffff;
+  border: none;
+  font-weight: 700;
+  font-size: 100px;
 }
 
 #five:hover {
   width: 30%;
+  background-color: #f907eb;
 }
 
 #stepOneContainer {

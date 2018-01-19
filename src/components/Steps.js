@@ -6,7 +6,7 @@ import Session from './Session';
 class Steps extends Component {
   constructor(props) {
     super(props);
-    this._handleClickOne = this._handleClickOne.bind(this);
+      this._handleClickOne = this._handleClickOne.bind(this);
       this._handleClickTwo = this._handleClickTwo.bind(this);
       this._handleClickThree = this._handleClickThree.bind(this);
       this._handleClickFour = this._handleClickFour.bind(this);
@@ -37,12 +37,15 @@ class Steps extends Component {
   render () {
     return (
       <div id="wrapper">
+        <a href="/"><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
+      } /></a>
         <div id="buttonContainer">
           <button onClick={this._handleClickOne} id="one">1</button>
           <button onClick={this._handleClickTwo} id="two">2</button>
           <button onClick={this._handleClickThree} id="three">3</button>
           <button onClick={this._handleClickFour} id="four">4</button>
           <button onClick={this._handleClickFive} id="five">5</button>
+          <a href="#"><div id="exit">Exit</div></a>
         </div>
       </div>
     );
