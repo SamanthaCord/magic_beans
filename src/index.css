@@ -128,7 +128,8 @@ body {
 
 #four:hover {
   width: 30%;
-  background-color: #0df15e;
+  /* background-color: #0df15e; */
+  background-color: #0afb04;
 }
 
 #five {
@@ -152,6 +153,7 @@ body {
   height: 100%;
   width: 100%;
   z-index: 4;
+  border-top: 60px black solid;
 }
 
 /*//////////////////STEP 1//////////////////////*/

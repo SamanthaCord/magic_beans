@@ -47,7 +47,6 @@ class App extends Component {
 
   _saveInput(e) {
     const update = this.state.identity.slice()
-
     this.setState({identity: [...update, e]}, function() {
       localStorage['stepone'] = JSON.stringify(this.state.identity);
     })

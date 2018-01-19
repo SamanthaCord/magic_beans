@@ -81,6 +81,9 @@ class One extends Component {
   render () {
     return (
       <div id="stepOneContainer">
+        <a href="/"><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
+        } /></a>
+        <a href="#"><div id="exit">Exit</div></a>
         {!this.state.newPhrase ? <h1>How do you want your brand to be percieved?</h1> : <h1>{this.state.newPhrase}</h1>}
         <button onClick={this._changeHeading}>icon</button>
         {this.randomise()}
