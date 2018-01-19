@@ -149,14 +149,22 @@ body {
 }
 
 #stepOneContainer {
-  background-color: grey;
+  background-color: white;
+  position: absolute;
   height: 100%;
   width: 100%;
   z-index: 4;
-  border-top: 60px black solid;
+  border: 60px black solid;
 }
 
 /*//////////////////STEP 1//////////////////////*/
+
+h1 {
+  font-size: 35px;
+  font-weight: 700;
+  color: #2020da;
+  margin: 50px;
+}
 
 #suggestions {
   display:inline-block;
@@ -167,5 +175,6 @@ body {
   width: 50%;
   min-height: 150px;
   background-color: white;
+  border: 1px grey solid;
   margin: 0 auto;
 }
