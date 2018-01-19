@@ -2,6 +2,7 @@ import React, { PureComponent as Component } from 'react';
 import App from './App';
 
 
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +12,6 @@ class Home extends Component {
   _handleClick() {
     console.log("the button was clicked");
     this.props.show()
-    this.props.count()
   }
 
   render() {

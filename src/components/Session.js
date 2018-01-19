@@ -4,13 +4,20 @@ import App from './App';
 
 
 class Session extends Component {
+  constructor (props) {
+    super(props);
+  }
+
+  componentDidMount() {
+  setTimeout(this.props.hide, 2000)
+  console.log("session did mount");
+  }
 
   render () {
     return (
       <div id="session">
         <h1>Your Session Has Started!</h1>
         <p>"Don't freak out, we're all chilled here."</p>
-        {setTimeout(function() {window.location.reload()}, 2000)}
       </div>
     );
   }
