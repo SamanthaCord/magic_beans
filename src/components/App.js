@@ -20,8 +20,11 @@ class App extends Component {
     this._session = this._session.bind(this);
     this._steps = this._steps.bind(this);
     this._firstStep = this._firstStep.bind(this);
-  }
 
+  }
+  componentDidMount() {
+    this.setState({identity: JSON.parse(localStorage.getItem('stepone'))})
+  }
   _session() {
     this.setState({showSession: true});
     this.setState({showHome: false});
@@ -54,7 +57,7 @@ class App extends Component {
         {this.state.showSession ? <Session hide={() => this._steps()} /> : null}
         {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()}/> : null}
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
-        {this.state.stepOne ? <One value={(e) => this._saveInput(e)}/> : null}
+        {this.state.stepOne ? <One value={(e) => this._saveInput(e)} identity={this.state.identity}/> : null}
       </div>
     );
   }

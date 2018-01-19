@@ -2,13 +2,13 @@ import React, { PureComponent as Component } from 'react';
 import App from './App';
 import Steps from './Steps';
 
-const suggestions = ["premium", "approachable", ];
 
 class One extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: ''
+      query: '',
+      suggestions: ["premium", "approachable", "3", "4", "5", "6", "7", "8", "9", "10"]
     }
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleChange = this._handleChange.bind(this);
@@ -24,7 +24,6 @@ class One extends Component {
     });
   }
 
-
   _handleChange(e) {
     this.setState({
       query: e.target.value
@@ -38,11 +37,16 @@ class One extends Component {
         <form onSubmit={this._handleSubmit}>
           <input type="search" onChange={this._handleChange} value={this.state.query}/>
         </form>
-        <div></div>
+          {this.state.suggestions.map( (s) => {
+          return <button id="suggestions" key= { this.state.suggestions.indexOf(s) } value={ s }>{ s }
+        </button>
+        })}
+        <div className="identityContainer">
+          {this.props.identity.map(i => { return <p key={this.props.identity.indexOf(i)}>{i}</p> })}
+        </div>
       </div>
     );
   }
 }
-
 
 export default One;
