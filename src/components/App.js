@@ -44,7 +44,7 @@ class App extends Component {
       <div>
         {this.state.showSession ? <Session hide={() => this._steps()} /> : null}
         {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()}/> : null}
-        {this.state.showHome ? <Home show={() => this._session()} /> : null} 
+        {this.state.showHome ? <Home show={() => this._session()} /> : null}
         {this.state.stepOne ? <One /> : null}
       </div>
     );

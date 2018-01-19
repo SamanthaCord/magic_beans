@@ -3,15 +3,47 @@ import App from './App';
 import Steps from './Steps';
 
 class One extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      query: ''
+    }
+    this._handleSubmit = this._handleSubmit.bind(this);
+    this._handleChange = this._handleChange.bind(this);
+  }
+
+  _handleSubmit(e) {
+    e.preventDefault();
+    const query = this.state.query;
+    console.log(query);
+  }
+
+  _handleChange(e) {
+    this.setState({
+      query: e.target.value
+    });
+  }
+
   render () {
     return (
       <div id="stepOneContainer">
         <h1>How do you want your brand to be percieved?</h1>
-        <input />
+        <form onSubmit={this._handleSubmit}>
+          <input type="search" onChange={this._handleChange} value={this.state.query}/>
+        </form>
         <div></div>
       </div>
     );
   }
 }
 
+
 export default One;
+
+
+// _handleSubmit(e) {
+//   e.preventDefault();
+//   const query = this.state.query;
+//   // console.log(query);
+//   this.context.router.history.push(`/details/${query}`); //Navigate to a new page.
+// }

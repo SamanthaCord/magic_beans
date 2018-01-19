@@ -16,7 +16,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+    <div>
         <h1>Magic Beans</h1>
         <h2>Grow your idea</h2>
         <button onClick={this._handleClick}>Start your session</button>
