@@ -148,6 +148,8 @@ body {
   background-color: #f907eb;
 }
 
+/*//////////////////STEP 1//////////////////////*/
+
 #stepOneContainer {
   background-color: white;
   position: absolute;
@@ -156,8 +158,6 @@ body {
   z-index: 4;
   border: 60px black solid;
 }
-
-/*//////////////////STEP 1//////////////////////*/
 
 h1 {
   font-size: 35px;
@@ -177,4 +177,15 @@ h1 {
   background-color: white;
   border: 1px grey solid;
   margin: 0 auto;
+}
+
+/*//////////////////STEP 2//////////////////////*/
+
+#stepTwoContainer {
+  background-color: white;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  border: 60px black solid;
 }
