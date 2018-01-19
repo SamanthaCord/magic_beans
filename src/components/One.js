@@ -8,7 +8,7 @@ class One extends Component {
     super(props);
     this.state = {
       query: '',
-      suggestions: ["premium", "approachable", "3", "4", "5", "6", "7", "8", "9", "10"],
+      suggestions: ["premium", "approachable", "innovative", "bold", "creative", "fashion", "ecommerce", "engaging", "straight forward", "cool"],
       randoms: []
     }
     this._handleSubmit = this._handleSubmit.bind(this);
