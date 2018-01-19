@@ -115,7 +115,7 @@ body {
 
 .identityContainer {
   width: 50%;
-  height: 150px;
+  min-height: 150px;
   background-color: white;
   margin: 0 auto;
 }
