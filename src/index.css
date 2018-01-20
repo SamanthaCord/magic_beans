@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600|Roboto:300,400,700');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   border-collapse: collapse;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -21,8 +22,8 @@ body {
 }
 
 #logo {
-  width: 60px;
-  height: 60px;
+  width: 58px;
+  height: 55px;
 }
 
 #logobutton {
@@ -254,4 +255,12 @@ h1 {
   width: 100%;
   z-index: 4;
   border: 60px black solid;
+}
+
+.namingContainer {
+  width: 50%;
+  min-height: 150px;
+  background-color: white;
+  border: 1px grey solid;
+  margin: 0 auto;
 }

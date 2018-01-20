@@ -89,6 +89,7 @@ class One extends Component {
         <button id='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
       } /></button>
         <a href="#"><div id="exit">Exit</div></a>
+        <h1>Brand Identity</h1>
         {!this.state.newPhrase ? <h1>How do you want your brand to be percieved?</h1> : <h1>{this.state.newPhrase}</h1>}
         <button onClick={this._changeHeading}>icon</button>
         {this.randomise()}

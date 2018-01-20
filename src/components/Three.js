@@ -86,6 +86,7 @@ class Three extends Component {
         <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
         } /></button>
         <a href="#"><div id="exit">Exit</div></a>
+        <h1>Tone of Voice</h1>
         {!this.state.newPhrase ? <h1>How will your idea / brand communicate?</h1> : <h1>{this.state.newPhrase}</h1>}
         <button onClick={this._changeHeading}>icon</button>
         {this.randomise()}
