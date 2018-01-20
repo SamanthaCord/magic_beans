@@ -48,7 +48,7 @@ class Two extends Component {
     });
   }
 
-  _handleChange (e) {
+  _handleChange(e) {
     this.setState ({
       query: e.target.value
     });
@@ -87,7 +87,7 @@ class Two extends Component {
         <button onClick={this._changeHeading}>icon</button>
         {this.randomise()}
         <form onSubmit={this._handleSubmit}>
-          <input type="search" onChange={this._handleChange} value={this.state.query}/>
+          <input type="search" onChange={this._handleChange} value={this.state.query} />
         </form>
         <div className="audienceContainer">
           {this.props.audience.map(i => {

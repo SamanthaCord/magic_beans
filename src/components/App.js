@@ -22,7 +22,8 @@ class App extends Component {
       stepFour: false,
       stepFive: false,
       identity: [],
-      audience: []
+      audience: [],
+      tov: []
     };
     this._session = this._session.bind(this);
     this._steps = this._steps.bind(this);
@@ -30,11 +31,14 @@ class App extends Component {
     this._saveItem = this._saveItem.bind(this);
     this._saveInput = this._saveInput.bind(this);
     this._deleteItem = this._deleteItem.bind(this);
+
     this._saveInput2 = this._saveInput2.bind(this);
     this._secondStep = this._secondStep.bind(this);
     this._saveItem2 = this._saveItem2.bind(this);
     this._deleteItem2 = this._deleteItem2.bind(this);
+
     this._thirdStep = this._thirdStep.bind(this);
+    this._saveInput3 = this._saveInput3.bind(this);
   }
   componentDidMount() {
     if(localStorage.getItem('stepone')){
@@ -136,6 +140,14 @@ class App extends Component {
     console.log("working on opening step 3");
   }
 
+  _saveInput3(e) {
+    const update = this.state.tov.slice()
+    this.setState({tov: [...update, e]}, function() {
+      localStorage['stepthree'] = JSON.stringify(this.state.tov);
+    })
+    console.log(e);
+  }
+
   render() {
     return (
       <div>
@@ -149,7 +161,7 @@ class App extends Component {
 
         {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} addItem={(e) => this._saveItem2(e)} audience={this.state.audience} remove={(i) => this._deleteItem2(i)} /> : null}
 
-        {this.state.stepThree ? <Three /> : null}
+        {this.state.stepThree ? <Three value={(e) => this._saveInput3(e)} /> : null}
       </div>
     );
   }
