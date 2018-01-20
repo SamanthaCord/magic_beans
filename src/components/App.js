@@ -39,6 +39,8 @@ class App extends Component {
 
     this._thirdStep = this._thirdStep.bind(this);
     this._saveInput3 = this._saveInput3.bind(this);
+    this._deleteItem3 = this._deleteItem3.bind(this);
+    this._saveItem3 = this._saveItem3.bind(this);
   }
   componentDidMount() {
     if(localStorage.getItem('stepone')){
@@ -46,6 +48,9 @@ class App extends Component {
     }
     if(localStorage.getItem('steptwo')){
       this.setState({audience: JSON.parse(localStorage.getItem('steptwo'))})
+    }
+    if(localStorage.getItem('stepthree')){
+      this.setState({tov: JSON.parse(localStorage.getItem('stepthree'))})
     }
   }
 
@@ -148,6 +153,26 @@ class App extends Component {
     console.log(e);
   }
 
+  _deleteItem3(i) {
+    const update = this.state.tov.slice()
+    update.splice( this.state.tov.indexOf(i), 1)
+    this.setState({
+      tov: update
+    }, function() {
+      localStorage['stepthree'] = JSON.stringify(this.state.tov);
+    })
+  }
+
+  _saveItem3(e) {
+    const update = this.state.tov.slice()
+
+    this.setState({tov: [...update, e]}, function() {
+      localStorage['stepthree'] = JSON.stringify(this.state.tov);
+    })
+    console.log(e);
+  }
+
+
   render() {
     return (
       <div>
@@ -157,11 +182,11 @@ class App extends Component {
 
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
 
-        {this.state.stepOne ? <One addItem={(e) => this._saveItem(e)} value={(e) => this._saveInput(e)} identity={this.state.identity} remove={(i) => this._deleteItem(i)} /> : null}
+        {this.state.stepOne ? <One value={(e) => this._saveInput(e)} identity={this.state.identity} addItem={(e) => this._saveItem(e)} remove={(i) => this._deleteItem(i)} /> : null}
 
-        {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} addItem={(e) => this._saveItem2(e)} audience={this.state.audience} remove={(i) => this._deleteItem2(i)} /> : null}
+        {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} audience={this.state.audience} addItem={(e) => this._saveItem2(e)} remove={(i) => this._deleteItem2(i)} /> : null}
 
-        {this.state.stepThree ? <Three value={(e) => this._saveInput3(e)} /> : null}
+        {this.state.stepThree ? <Three value={(e) => this._saveInput3(e)} tov={this.state.tov} addItem={(e) => this._saveItem3(e)} remove={(i) => this._deleteItem3(i)} /> : null}
       </div>
     );
   }

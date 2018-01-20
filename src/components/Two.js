@@ -54,9 +54,9 @@ class Two extends Component {
     });
   }
 
-  _handleClick (i) {
+  _handleClick(i) {
     console.log("tried to delete an item");
-    this.props.remove()
+    this.props.remove(i)
   }
 
   _addItem(e) {
