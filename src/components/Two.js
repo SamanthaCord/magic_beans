@@ -13,12 +13,17 @@ class Two extends Component {
       questionAlts: ["Who do you want to engage with?", "What type of people would like this?", "Who is your primary and secondary audience?"],
       newPhrase: ''
     }
+    this._changeScreen = this._changeScreen.bind(this);
     this._changeHeading = this._changeHeading.bind(this);
     this._handleChange = this._handleChange.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleClick = this._handleClick.bind(this);
     this.randomise = this.randomise.bind(this);
     this._addItem = this._addItem.bind(this);
+  }
+
+  _changeScreen() {
+    this.props.backToSteps()
   }
 
   componentDidMount(){
@@ -80,8 +85,8 @@ class Two extends Component {
   render () {
     return (
       <div id="stepTwoContainer">
-        <a href="/"><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
-        } /></a>
+        <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
+        } /></button>
         <a href="#"><div id="exit">Exit</div></a>
         {!this.state.newPhrase ? <h1>Who is your audience?</h1> : <h1>{this.state.newPhrase}</h1>}
         <button onClick={this._changeHeading}>icon</button>

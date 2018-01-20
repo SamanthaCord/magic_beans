@@ -13,6 +13,7 @@ class One extends Component {
       questionAlts: ["what is your product / idea?", "what are your strengths?", "what is your business / idea about?"],
       newPhrase: ''
     }
+    this._changeScreen = this._changeScreen.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleChange = this._handleChange.bind(this);
     this._handleClick = this._handleClick.bind(this);
@@ -30,6 +31,10 @@ class One extends Component {
        randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1),
        randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1)
     ]})
+  }
+
+  _changeScreen() {
+    this.props.backToSteps()
   }
 
   _handleSubmit(e) {
@@ -81,8 +86,8 @@ class One extends Component {
   render () {
     return (
       <div id="stepOneContainer">
-        <a href="/"><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
-        } /></a>
+        <button id='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
+      } /></button>
         <a href="#"><div id="exit">Exit</div></a>
         {!this.state.newPhrase ? <h1>How do you want your brand to be percieved?</h1> : <h1>{this.state.newPhrase}</h1>}
         <button onClick={this._changeHeading}>icon</button>

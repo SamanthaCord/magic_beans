@@ -13,7 +13,6 @@ const Routes = (
     <div>
       <Route exact path="/" component={ App } />
       <Route exact path="/session" component={ Session } />
-      <Route exact path="/steps" component={ Steps } />
     </div>
   </Router>
 )

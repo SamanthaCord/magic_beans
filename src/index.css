@@ -21,12 +21,21 @@ body {
 }
 
 #logo {
+  width: 60px;
+  height: 60px;
+}
+
+#logobutton {
   z-index: 99;
   position: fixed;
   left: 0;
   top: 0;
-  width: 60px;
-  height: 60px;
+}
+
+.logobutton {
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 #exit {
@@ -210,6 +219,25 @@ h1 {
 }
 
 .tovContainer {
+  width: 50%;
+  min-height: 150px;
+  background-color: white;
+  border: 1px grey solid;
+  margin: 0 auto;
+}
+
+/*//////////////////STEP 4//////////////////////*/
+
+#stepFourContainer {
+  background-color: white;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  border: 60px black solid;
+}
+
+.podContainer {
   width: 50%;
   min-height: 150px;
   background-color: white;

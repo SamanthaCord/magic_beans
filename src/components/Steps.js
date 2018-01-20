@@ -4,15 +4,21 @@ import Session from './Session';
 import One from './One';
 import Two from './Two';
 import Three from './Three';
+import Four from './Four';
 
 class Steps extends Component {
   constructor(props) {
     super(props);
+      this._changeScreen = this._changeScreen.bind(this);
       this._handleClickOne = this._handleClickOne.bind(this);
       this._handleClickTwo = this._handleClickTwo.bind(this);
       this._handleClickThree = this._handleClickThree.bind(this);
       this._handleClickFour = this._handleClickFour.bind(this);
       this._handleClickFive = this._handleClickFive.bind(this);
+  }
+
+  _changeScreen() {
+    this.props.backToSteps()
   }
 
   _handleClickOne () {
@@ -32,6 +38,7 @@ class Steps extends Component {
 
   _handleClickFour () {
     console.log("open step 4");
+    this.props.showFour()
   }
 
   _handleClickFive () {
@@ -41,8 +48,8 @@ class Steps extends Component {
   render () {
     return (
       <div id="wrapper">
-        <a href="/"><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
-        } /></a>
+        <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
+      } /></button>
         <a href="#"><div id="exit">Exit</div></a>
         <div id="buttonContainer">
           <button onClick={this._handleClickOne} id="one">1</button>

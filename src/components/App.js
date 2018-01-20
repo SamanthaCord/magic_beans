@@ -5,6 +5,7 @@ import Steps from './Steps';
 import One from './One';
 import Two from './Two';
 import Three from './Three';
+import Four from './Four';
 
 import '../index.css';
 
@@ -23,10 +24,13 @@ class App extends Component {
       stepFive: false,
       identity: [],
       audience: [],
-      tov: []
+      tov: [],
+      pod: []
     };
     this._session = this._session.bind(this);
     this._steps = this._steps.bind(this);
+    this._showSteps = this._showSteps.bind(this);
+
     this._firstStep = this._firstStep.bind(this);
     this._saveItem = this._saveItem.bind(this);
     this._saveInput = this._saveInput.bind(this);
@@ -41,6 +45,10 @@ class App extends Component {
     this._saveInput3 = this._saveInput3.bind(this);
     this._deleteItem3 = this._deleteItem3.bind(this);
     this._saveItem3 = this._saveItem3.bind(this);
+
+    this._fourthStep = this._fourthStep.bind(this);
+    this._saveInput4 = this._saveInput4.bind(this);
+
   }
   componentDidMount() {
     if(localStorage.getItem('stepone')){
@@ -52,6 +60,9 @@ class App extends Component {
     if(localStorage.getItem('stepthree')){
       this.setState({tov: JSON.parse(localStorage.getItem('stepthree'))})
     }
+    if(localStorage.getItem('stepfour')){
+      this.setState({pod: JSON.parse(localStorage.getItem('stepfour'))})
+    }
   }
 
   _session() {
@@ -62,6 +73,19 @@ class App extends Component {
   _steps() {
     this.setState({pageCount: 2});
     console.log("page count increased to 2");
+  }
+
+  _showSteps() {
+    this.setState({
+      pageCount: 2,
+      stepOne: false,
+      stepTwo: false,
+      stepThree: false,
+      stepFour: false,
+      stepFive: false,
+      showSession: false
+    });
+    console.log(this.state.pageCount);
   }
 
   _firstStep() {
@@ -172,21 +196,60 @@ class App extends Component {
     console.log(e);
   }
 
+  _fourthStep() {
+    this.setState({stepFour: true});
+    this.setState({stepThree: false});
+    this.setState({stepTwo: false});
+    this.setState({stepOne: false});
+    this.setState({showSession: false});
+    this.setState({pageCount: 1});
+    this.setState({showHome: false});
+    console.log("working on opening step 3");
+  }
+
+  _saveInput4(e) {
+    const update = this.state.pod.slice()
+    this.setState({pod: [...update, e]}, function() {
+      localStorage['stepfour'] = JSON.stringify(this.state.pod);
+    })
+    console.log(e);
+  }
+
+  _deleteItem4(i) {
+    const update = this.state.pod.slice()
+    update.splice( this.state.pod.indexOf(i), 1)
+    this.setState({
+      pod: update
+    }, function() {
+      localStorage['stepfour'] = JSON.stringify(this.state.pod);
+    })
+  }
+
+  _saveItem4(e) {
+    const update = this.state.pod.slice()
+
+    this.setState({pod: [...update, e]}, function() {
+      localStorage['stepfour'] = JSON.stringify(this.state.pod);
+    })
+    console.log(e);
+  }
 
   render() {
     return (
       <div>
         {this.state.showSession ? <Session hide={() => this._steps()} /> : null}
 
-        {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} /> : null}
+        {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} backToSteps={this._showSteps} /> : null}
 
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
 
-        {this.state.stepOne ? <One value={(e) => this._saveInput(e)} identity={this.state.identity} addItem={(e) => this._saveItem(e)} remove={(i) => this._deleteItem(i)} /> : null}
+        {this.state.stepOne ? <One value={(e) => this._saveInput(e)} identity={this.state.identity} addItem={(e) => this._saveItem(e)} remove={(i) => this._deleteItem(i)} backToSteps={this._showSteps} /> : null}
 
-        {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} audience={this.state.audience} addItem={(e) => this._saveItem2(e)} remove={(i) => this._deleteItem2(i)} /> : null}
+        {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} audience={this.state.audience} addItem={(e) => this._saveItem2(e)} remove={(i) => this._deleteItem2(i)} backToSteps={this._showSteps} /> : null}
 
-        {this.state.stepThree ? <Three value={(e) => this._saveInput3(e)} tov={this.state.tov} addItem={(e) => this._saveItem3(e)} remove={(i) => this._deleteItem3(i)} /> : null}
+        {this.state.stepThree ? <Three value={(e) => this._saveInput3(e)} tov={this.state.tov} addItem={(e) => this._saveItem3(e)} remove={(i) => this._deleteItem3(i)} backToSteps={this._showSteps} /> : null}
+
+        {this.state.stepFour ? <Four value={(e) => this._saveInput4(e)} pod={this.state.pod} addItem={(e) => this._saveItem4(e)} remove={(i) => this._deleteItem4(i)} backToSteps={this._showSteps} /> : null}
       </div>
     );
   }
