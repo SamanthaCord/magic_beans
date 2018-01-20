@@ -3,6 +3,7 @@ import Home from './Home';
 import Session from './Session';
 import Steps from './Steps';
 import One from './One';
+import Two from './Two';
 
 import '../index.css';
 
@@ -15,18 +16,28 @@ class App extends Component {
       showHome: true,
       pageCount: 0,
       stepOne: false,
-      identity: []
+      stepTwo: false,
+      identity: [],
+      audience: []
     };
     this._session = this._session.bind(this);
     this._steps = this._steps.bind(this);
     this._firstStep = this._firstStep.bind(this);
     this._saveItem = this._saveItem.bind(this);
+    this._saveInput = this._saveInput.bind(this);
+    this._saveInput2 = this._saveInput2.bind(this);
+    this._secondStep = this._secondStep.bind(this);
+    this._saveItem2 = this._saveItem2.bind(this);
   }
   componentDidMount() {
     if(localStorage.getItem('stepone')){
       this.setState({identity: JSON.parse(localStorage.getItem('stepone'))})
     }
+    if(localStorage.getItem('steptwo')){
+      this.setState({audience: JSON.parse(localStorage.getItem('steptwo'))})
+    }
   }
+
   _session() {
     this.setState({showSession: true});
     this.setState({showHome: false});
@@ -72,13 +83,43 @@ class App extends Component {
     console.log(e);
   }
 
+  _saveInput2(e) {
+    const update = this.state.audience.slice()
+    this.setState({audience: [...update, e]}, function() {
+      localStorage['steptwo'] = JSON.stringify(this.state.audience);
+    })
+    console.log(e);
+  }
+
+  _secondStep(e) {
+    this.setState({stepTwo: true});
+    this.setState({stepOne: false});
+    this.setState({showSession: false});
+    this.setState({pageCount: 1});
+    this.setState({showHome: false});
+    console.log("working on opening step 2");
+  }
+
+  _saveItem2(e) {
+    const update = this.state.audience.slice()
+
+    this.setState({audience: [...update, e]}, function() {
+      localStorage['steptwo'] = JSON.stringify(this.state.audience);
+    })
+    console.log(e);
+  }
+
+
+
   render() {
     return (
       <div>
         {this.state.showSession ? <Session hide={() => this._steps()} /> : null}
-        {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()}/> : null}
+        {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()} showTwo={() => this._secondStep()}/> : null}
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
         {this.state.stepOne ? <One addItem={(e) => this._saveItem(e)} value={(e) => this._saveInput(e)} identity={this.state.identity} remove={(i) => this._deleteItem(i)} /> : null}
+
+        {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} addItem={(e) => this._saveItem2(e)} audience={this.state.audience} /> : null}
       </div>
     );
   }

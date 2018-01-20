@@ -189,3 +189,11 @@ h1 {
   z-index: 4;
   border: 60px black solid;
 }
+
+.audienceContainer {
+  width: 50%;
+  min-height: 150px;
+  background-color: white;
+  border: 1px grey solid;
+  margin: 0 auto;
+}

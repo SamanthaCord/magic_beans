@@ -14,12 +14,35 @@ class Two extends Component {
       newPhrase: ''
     }
     this._changeHeading = this._changeHeading.bind(this);
+    this._handleChange = this._handleChange.bind(this);
+    this._handleSubmit = this._handleSubmit.bind(this);
+    this._handleClick = this._handleClick.bind(this);
   }
 
   _changeHeading () {
     console.log('change the question');
     let newHeading = this.state.questionAlts.slice()
     this.setState({newPhrase: newHeading.splice(Math.floor(Math.random()*newHeading.length),1)})
+  }
+
+  _handleSubmit(e) {
+    e.preventDefault();
+    const query = this.state.query;
+    // console.log(query);
+    this.props.value(query)
+    this.setState({
+      query: ''
+    });
+  }
+
+  _handleChange (e) {
+    this.setState ({
+      query: e.target.value
+    });
+  }
+
+  _handleClick (i) {
+    console.log("tried to delete an item");
   }
 
   render () {
@@ -30,6 +53,12 @@ class Two extends Component {
         <a href="#"><div id="exit">Exit</div></a>
         {!this.state.newPhrase ? <h1>Who is your audience?</h1> : <h1>{this.state.newPhrase}</h1>}
         <button onClick={this._changeHeading}>icon</button>
+        <form onSubmit={this._handleSubmit}>
+          <input type="search" onChange={this._handleChange} value={this.state.query}/>
+        </form>
+        <div className="audienceContainer">
+          {this.props.audience.map(i => { return <p key={this.props.audience.indexOf(i)}>{i}<button onClick={()=>{this._handleClick(i)}}>&times;</button></p>})}
+        </div>
       </div>
     );
   }

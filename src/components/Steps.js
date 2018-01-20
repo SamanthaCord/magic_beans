@@ -20,6 +20,7 @@ class Steps extends Component {
 
   _handleClickTwo () {
     console.log("open step 2");
+    this.props.showTwo()
   }
 
   _handleClickThree () {
