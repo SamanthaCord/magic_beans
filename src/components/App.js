@@ -26,7 +26,8 @@ class App extends Component {
       identity: [],
       audience: [],
       tov: [],
-      pod: []
+      pod: [],
+      names: []
     };
     this._session = this._session.bind(this);
     this._steps = this._steps.bind(this);
@@ -49,7 +50,13 @@ class App extends Component {
 
     this._fourthStep = this._fourthStep.bind(this);
     this._saveInput4 = this._saveInput4.bind(this);
+    this._deleteItem4 = this._deleteItem4.bind(this);
+    this._saveItem4 = this._saveItem4.bind(this);
 
+    this._fifthStep = this._fifthStep.bind(this);
+    this._saveInput5 = this._saveInput5.bind(this);
+    this._deleteItem5 = this._deleteItem5.bind(this);
+    this._saveItem5 = this._saveItem5.bind(this);
   }
   componentDidMount() {
     if(localStorage.getItem('stepone')){
@@ -63,6 +70,9 @@ class App extends Component {
     }
     if(localStorage.getItem('stepfour')){
       this.setState({pod: JSON.parse(localStorage.getItem('stepfour'))})
+    }
+    if(localStorage.getItem('stepfive')){
+      this.setState({pod: JSON.parse(localStorage.getItem('stepfive'))})
     }
   }
 
@@ -244,7 +254,34 @@ class App extends Component {
     this.setState({showSession: false});
     this.setState({pageCount: 1});
     this.setState({showHome: false});
-    console.log("working on opening step 3");
+    console.log("working on opening step 5");
+  }
+
+  _saveInput5(e) {
+    const update = this.state.names.slice()
+    this.setState({names: [...update, e]}, function() {
+      localStorage['stepfive'] = JSON.stringify(this.state.names);
+    })
+    console.log(e);
+  }
+
+  _deleteItem5(i) {
+    const update = this.state.names.slice()
+    update.splice( this.state.names.indexOf(i), 1)
+    this.setState({
+      names: update
+    }, function() {
+      localStorage['stepfive'] = JSON.stringify(this.state.names);
+    })
+  }
+
+  _saveItem5(e) {
+    const update = this.state.names.slice()
+
+    this.setState({names: [...update, e]}, function() {
+      localStorage['stepfive'] = JSON.stringify(this.state.names);
+    })
+    console.log(e);
   }
 
   render() {
@@ -264,7 +301,7 @@ class App extends Component {
 
         {this.state.stepFour ? <Four value={(e) => this._saveInput4(e)} pod={this.state.pod} addItem={(e) => this._saveItem4(e)} remove={(i) => this._deleteItem4(i)} backToSteps={this._showSteps} /> : null}
 
-        {this.state.stepFive ? <Five backToSteps={this._showSteps} /> : null}
+        {this.state.stepFive ? <Five value={(e) => this._saveInput5(e)} names={this.state.names} addItem={(e) => this._saveItem5(e)} remove={(i) => this._deleteItem5(i)} backToSteps={this._showSteps} /> : null}
       </div>
     );
   }

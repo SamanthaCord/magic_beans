@@ -16,10 +16,24 @@ class Five extends Component {
     this._changeHeading = this._changeHeading.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleChange = this._handleChange.bind(this);
+    this._handleClick = this._handleClick.bind(this);
+    this.randomise = this.randomise.bind(this);
+    this._addItem = this._addItem.bind(this);
   }
 
   _changeScreen() {
     this.props.backToSteps()
+  }
+
+  componentDidMount(){
+    let randomSuggest = this.state.suggestions.slice();
+    this.setState({randoms: [
+       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1),
+       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1),
+       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1),
+       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1),
+       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1)
+    ]})
   }
 
   _changeHeading () {
@@ -44,6 +58,30 @@ class Five extends Component {
     });
   }
 
+  _handleClick(i) {
+    console.log("tried to delete an item");
+    this.props.remove(i)
+  }
+
+  _addItem(e) {
+    this.props.addItem(e.target.value);
+  }
+
+  randomise() {
+    let randomSuggest = this.state.suggestions.slice();
+
+    return (
+      <div>
+        <button value={this.state.randoms[0]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[0]}</button>
+        <button value={this.state.randoms[1]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[1]}</button>
+        <button value={this.state.randoms[2]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[2]}</button>
+        <button value={this.state.randoms[3]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[3]}</button>
+        <button value={this.state.randoms[4]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[4]}</button>
+      </div>
+    )
+  }
+
+
   render() {
     return (
       <div id="stepFiveContainer">
@@ -52,9 +90,14 @@ class Five extends Component {
         <a href="#"><div id="exit">Exit</div></a>
         {!this.state.newPhrase ? <h1>Does your idea / brand have a name?</h1> : <h1>{this.state.newPhrase}</h1>}
         <button onClick={this._changeHeading}>icon</button>
+        {this.randomise()}
         <form onSubmit={this._handleSubmit}>
           <input type="search" onChange={this._handleChange} value={this.state.query} />
         </form>
+        <div className="namingContainer">
+          {this.props.names.map(i => {
+          return <p key={this.props.names.indexOf(i)}>{i}<button onClick={()=>{this._handleClick(i)}}>&times;</button></p>})}
+        </div>
       </div>
     );
   }
