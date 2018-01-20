@@ -25,9 +25,11 @@ class App extends Component {
     this._firstStep = this._firstStep.bind(this);
     this._saveItem = this._saveItem.bind(this);
     this._saveInput = this._saveInput.bind(this);
+    this._deleteItem = this._deleteItem.bind(this);
     this._saveInput2 = this._saveInput2.bind(this);
     this._secondStep = this._secondStep.bind(this);
     this._saveItem2 = this._saveItem2.bind(this);
+    this._deleteItem2 = this._deleteItem2.bind(this);
   }
   componentDidMount() {
     if(localStorage.getItem('stepone')){
@@ -109,8 +111,17 @@ class App extends Component {
     console.log(e);
   }
 
+  _deleteItem2(i) {
+    const update = this.state.audience.slice()
+    update.splice( this.state.audience.indexOf(i), 1)
+    this.setState({
+      audience: update
+    }, function() {
+      localStorage['steptwo'] = JSON.stringify(this.state.audience);
+    })
+  }
 
-
+  
   render() {
     return (
       <div>
@@ -119,7 +130,7 @@ class App extends Component {
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
         {this.state.stepOne ? <One addItem={(e) => this._saveItem(e)} value={(e) => this._saveInput(e)} identity={this.state.identity} remove={(i) => this._deleteItem(i)} /> : null}
 
-        {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} addItem={(e) => this._saveItem2(e)} audience={this.state.audience} /> : null}
+        {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} addItem={(e) => this._saveItem2(e)} audience={this.state.audience} remove={(i) => this._deleteItem2(i)} /> : null}
       </div>
     );
   }

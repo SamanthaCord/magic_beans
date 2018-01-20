@@ -43,6 +43,7 @@ class Two extends Component {
 
   _handleClick (i) {
     console.log("tried to delete an item");
+    this.props.remove()
   }
 
   render () {
@@ -57,7 +58,8 @@ class Two extends Component {
           <input type="search" onChange={this._handleChange} value={this.state.query}/>
         </form>
         <div className="audienceContainer">
-          {this.props.audience.map(i => { return <p key={this.props.audience.indexOf(i)}>{i}<button onClick={()=>{this._handleClick(i)}}>&times;</button></p>})}
+          {this.props.audience.map(i => {
+          return <p key={this.props.audience.indexOf(i)}>{i}<button onClick={()=>{this._handleClick(i)}}>&times;</button></p>})}
         </div>
       </div>
     );
