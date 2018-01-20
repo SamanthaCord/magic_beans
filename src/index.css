@@ -244,3 +244,14 @@ h1 {
   border: 1px grey solid;
   margin: 0 auto;
 }
+
+/*//////////////////STEP 5//////////////////////*/
+
+#stepFiveContainer {
+  background-color: white;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  border: 60px black solid;
+}

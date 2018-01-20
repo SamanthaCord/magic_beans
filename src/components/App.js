@@ -6,6 +6,7 @@ import One from './One';
 import Two from './Two';
 import Three from './Three';
 import Four from './Four';
+import Five from './Five';
 
 import '../index.css';
 
@@ -234,12 +235,24 @@ class App extends Component {
     console.log(e);
   }
 
+  _fifthStep() {
+    this.setState({stepFive: true});
+    this.setState({stepFour: false});
+    this.setState({stepThree: false});
+    this.setState({stepTwo: false});
+    this.setState({stepOne: false});
+    this.setState({showSession: false});
+    this.setState({pageCount: 1});
+    this.setState({showHome: false});
+    console.log("working on opening step 3");
+  }
+
   render() {
     return (
       <div>
         {this.state.showSession ? <Session hide={() => this._steps()} /> : null}
 
-        {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} backToSteps={this._showSteps} /> : null}
+        {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} backToSteps={this._showSteps} /> : null}
 
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
 
@@ -250,6 +263,8 @@ class App extends Component {
         {this.state.stepThree ? <Three value={(e) => this._saveInput3(e)} tov={this.state.tov} addItem={(e) => this._saveItem3(e)} remove={(i) => this._deleteItem3(i)} backToSteps={this._showSteps} /> : null}
 
         {this.state.stepFour ? <Four value={(e) => this._saveInput4(e)} pod={this.state.pod} addItem={(e) => this._saveItem4(e)} remove={(i) => this._deleteItem4(i)} backToSteps={this._showSteps} /> : null}
+
+        {this.state.stepFive ? <Five backToSteps={this._showSteps} /> : null}
       </div>
     );
   }

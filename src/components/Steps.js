@@ -43,6 +43,7 @@ class Steps extends Component {
 
   _handleClickFive () {
     console.log("open step 5");
+    this.props.showFive()
   }
 
   render () {
