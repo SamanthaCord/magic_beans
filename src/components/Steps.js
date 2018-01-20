@@ -25,6 +25,7 @@ class Steps extends Component {
 
   _handleClickThree () {
     console.log("open step 3");
+    this.props.showThree()
   }
 
   _handleClickFour () {

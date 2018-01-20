@@ -4,6 +4,7 @@ import Session from './Session';
 import Steps from './Steps';
 import One from './One';
 import Two from './Two';
+import Three from './Three';
 
 import '../index.css';
 
@@ -17,6 +18,9 @@ class App extends Component {
       pageCount: 0,
       stepOne: false,
       stepTwo: false,
+      stepThree: false,
+      stepFour: false,
+      stepFive: false,
       identity: [],
       audience: []
     };
@@ -30,6 +34,7 @@ class App extends Component {
     this._secondStep = this._secondStep.bind(this);
     this._saveItem2 = this._saveItem2.bind(this);
     this._deleteItem2 = this._deleteItem2.bind(this);
+    this._thirdStep = this._thirdStep.bind(this);
   }
   componentDidMount() {
     if(localStorage.getItem('stepone')){
@@ -121,20 +126,33 @@ class App extends Component {
     })
   }
 
-  
+  _thirdStep() {
+    this.setState({stepThree: true});
+    this.setState({stepTwo: false});
+    this.setState({stepOne: false});
+    this.setState({showSession: false});
+    this.setState({pageCount: 1});
+    this.setState({showHome: false});
+    console.log("working on opening step 3");
+  }
+
   render() {
     return (
       <div>
         {this.state.showSession ? <Session hide={() => this._steps()} /> : null}
-        {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()} showTwo={() => this._secondStep()}/> : null}
+
+        {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} /> : null}
+
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
+
         {this.state.stepOne ? <One addItem={(e) => this._saveItem(e)} value={(e) => this._saveInput(e)} identity={this.state.identity} remove={(i) => this._deleteItem(i)} /> : null}
 
         {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} addItem={(e) => this._saveItem2(e)} audience={this.state.audience} remove={(i) => this._deleteItem2(i)} /> : null}
+
+        {this.state.stepThree ? <Three /> : null}
       </div>
     );
   }
 }
 
 export default App;
-  // localStorage.setItem('stepone', this.state.identity.join(" ") + " " + e)

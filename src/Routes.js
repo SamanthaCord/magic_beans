@@ -14,8 +14,6 @@ const Routes = (
       <Route exact path="/" component={ App } />
       <Route exact path="/session" component={ Session } />
       <Route exact path="/steps" component={ Steps } />
-      <Route exact path="/one" component={ One } />
-      <Route exact path="/two" component={ Two } />
     </div>
   </Router>
 )
