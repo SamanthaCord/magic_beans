@@ -28,7 +28,7 @@ class Preview extends Component {
     const pdf = new jsPDF();
     pdf.addImage(imgData, 'JPEG', 10, 10, 180, 120);
     pdf.save("Brand_Session.pdf");
-    });
+  });
   }
 
   _exitPopUp() {

@@ -368,7 +368,29 @@ h1 {
   width: 100%;
   border: 60px black solid;
   z-index: 1;
+  /* -webkit-animation: slide-up 0.4s;
+  animation: slide-up 0.4s; */
 }
+
+/* @keyframes slide-up {
+  from {
+    margin-top: 100%;
+  }
+
+  to {
+    margin-top: 0%;
+  }
+}
+
+ @-webkit-keyframes slide-up {
+   from {
+     margin-top: 100%;
+   }
+
+   to {
+     margin-top: 0%;
+   }
+ } */
 
 .exitPage {
   background-color: black;
