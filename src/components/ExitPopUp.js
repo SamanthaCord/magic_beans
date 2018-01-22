@@ -14,6 +14,7 @@ class ExitPopUp extends Component {
     return (
       <div>
       <div id="exitContainer">
+          <h1>&times;</h1>
           <h1>Ideas are down, brains are tired, lets get outta here! <br />
           <br />
           Confirm youre officially done here by clicking the 'End Session' button & print your findings. Please note like all good ideas, our sessions are fleeting. Once you hit the confirm button your session is erased.</h1>

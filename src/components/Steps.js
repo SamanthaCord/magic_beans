@@ -17,40 +17,40 @@ class Steps extends Component {
     this.props.backToSteps()
   }
 
-  _handleClickOne () {
+  _handleClickOne() {
     console.log("open step 1");
     this.props.showOne()
   }
 
-  _handleClickTwo () {
+  _handleClickTwo() {
     console.log("open step 2");
     this.props.showTwo()
   }
 
-  _handleClickThree () {
+  _handleClickThree() {
     console.log("open step 3");
     this.props.showThree()
   }
 
-  _handleClickFour () {
+  _handleClickFour() {
     console.log("open step 4");
     this.props.showFour()
   }
 
-  _handleClickFive () {
+  _handleClickFive() {
     console.log("open step 5");
     this.props.showFive()
   }
 
-  _showPreview () {
+  _showPreview() {
     this.props.showPreview()
   }
 
-  _exitPopUp () {
+  _exitPopUp() {
     this.props.exitScreen()
   }
 
-  render () {
+  render() {
     return (
       <div id="wrapper">
         <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4770/39797943482_e083e15fe2.jpg'

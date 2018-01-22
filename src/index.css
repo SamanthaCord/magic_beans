@@ -18,7 +18,7 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: #e3e3e3;
 }
 
 #logo {
@@ -201,6 +201,7 @@ body {
   height: 100%;
   width: 100%;
   border: 60px black solid;
+  z-index: -1;
 }
 
 h1 {
@@ -231,6 +232,7 @@ h1 {
   height: 100%;
   width: 100%;
   border: 60px black solid;
+  z-index: -1;
 }
 
 .audienceContainer {
@@ -249,6 +251,7 @@ h1 {
   height: 100%;
   width: 100%;
   border: 60px black solid;
+  z-index: -1;
 }
 
 .tovContainer {
@@ -267,6 +270,7 @@ h1 {
   height: 100%;
   width: 100%;
   border: 60px black solid;
+  z-index: -1;
 }
 
 .podContainer {
@@ -285,6 +289,7 @@ h1 {
   height: 100%;
   width: 100%;
   border: 60px black solid;
+  z-index: -1;
 }
 
 .namingContainer {
@@ -303,6 +308,7 @@ h1 {
   height: 100%;
   width: 100%;
   border: 60px black solid;
+  z-index: -1;
 }
 
 .exitPage {

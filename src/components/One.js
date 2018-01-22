@@ -18,6 +18,7 @@ class One extends Component {
     this._addItem = this._addItem.bind(this);
     this._changeHeading = this._changeHeading.bind(this);
     this._showPreview = this._showPreview.bind(this);
+    this._exitPopUp = this._exitPopUp.bind(this);
   }
 
   componentDidMount(){
@@ -81,17 +82,21 @@ class One extends Component {
     this.setState({newPhrase: newHeading.splice(Math.floor(Math.random()*newHeading.length),1)})
   }
 
-  _showPreview () {
+  _showPreview() {
     this.props.showPreview()
   }
 
-  render () {
+  _exitPopUp() {
+    this.props.exitScreen()
+  }
+
+  render() {
     return (
       <div id="stepOneContainer">
         <button id='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4770/39797943482_e083e15fe2.jpg'
       } /></button>
         <h1 className="MainHeading">Magic Beans</h1>
-        <a href="#"><div id="exit">Exit</div></a>
+        <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
         <button className='previewButton' onClick={this._showPreview}>Preview Session</button>
         <h1>Brand Identity</h1>
         {!this.state.newPhrase ? <h1>How do you want your brand to be percieved?</h1> : <h1>{this.state.newPhrase}</h1>}

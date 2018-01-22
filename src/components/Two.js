@@ -18,6 +18,7 @@ class Two extends Component {
     this.randomise = this.randomise.bind(this);
     this._addItem = this._addItem.bind(this);
     this._showPreview = this._showPreview.bind(this);
+    this._exitPopUp = this._exitPopUp.bind(this);
   }
 
   _changeScreen() {
@@ -80,17 +81,21 @@ class Two extends Component {
     )
   }
 
-  _showPreview () {
+  _showPreview() {
     this.props.showPreview()
   }
 
-  render () {
+  _exitPopUp() {
+    this.props.exitScreen()
+  }
+
+  render() {
     return (
       <div id="stepTwoContainer">
         <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4770/39797943482_e083e15fe2.jpg'
         } /></button>
         <h1 className="MainHeading">Magic Beans</h1>
-        <a href="#"><div id="exit">Exit</div></a>
+        <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
         <button className='previewButton' onClick={this._showPreview}>Preview Session</button>
         <h1>Audience</h1>
         {!this.state.newPhrase ? <h1>Who is your audience?</h1> : <h1>{this.state.newPhrase}</h1>}

@@ -22,7 +22,7 @@ class Preview extends Component {
     });
   }
 
-  render () {
+  render() {
 
     return(
       <div id="previewContainer">

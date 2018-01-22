@@ -18,6 +18,7 @@ class Five extends Component {
     this.randomise = this.randomise.bind(this);
     this._addItem = this._addItem.bind(this);
     this._showPreview = this._showPreview.bind(this);
+    this._exitPopUp = this._exitPopUp.bind(this);
   }
 
   _changeScreen() {
@@ -35,7 +36,7 @@ class Five extends Component {
     ]})
   }
 
-  _changeHeading () {
+  _changeHeading() {
     console.log('change the question');
     let newHeading = this.state.questionAlts.slice()
     this.setState({newPhrase: newHeading.splice(Math.floor(Math.random()*newHeading.length),1)})
@@ -80,8 +81,12 @@ class Five extends Component {
     )
   }
 
-  _showPreview () {
+  _showPreview() {
     this.props.showPreview()
+  }
+
+  _exitPopUp() {
+    this.props.exitScreen()
   }
 
   render() {
@@ -90,7 +95,7 @@ class Five extends Component {
         <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4770/39797943482_e083e15fe2.jpg'
         } /></button>
         <h1 className="MainHeading">Magic Beans</h1>
-        <a href="#"><div id="exit">Exit</div></a>
+        <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
         <button className='previewButton' onClick={this._showPreview}>Preview Session</button>
         <h1>Naming</h1>
         {!this.state.newPhrase ? <h1>Does your idea / brand have a name?</h1> : <h1>{this.state.newPhrase}</h1>}

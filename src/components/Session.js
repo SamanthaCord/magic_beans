@@ -7,7 +7,7 @@ class Session extends Component {
   console.log("session did mount");
   }
 
-  render () {
+  render() {
     return (
       <div id="session">
         <h1>Your Session Has Started!</h1>

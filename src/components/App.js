@@ -329,17 +329,17 @@ class App extends Component {
 
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
 
-        {this.state.stepOne ? <One value={(e) => this._saveInput(e)} identity={this.state.identity} addItem={(e) => this._saveItem(e)} remove={(i) => this._deleteItem(i)} backToSteps={this._showSteps} showPreview={this._showPreview} /> : null}
+        {this.state.stepOne ? <One value={(e) => this._saveInput(e)} identity={this.state.identity} addItem={(e) => this._saveItem(e)} remove={(i) => this._deleteItem(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreen={this._exitPopUp} /> : null}
 
-        {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} audience={this.state.audience} addItem={(e) => this._saveItem2(e)} remove={(i) => this._deleteItem2(i)} backToSteps={this._showSteps} showPreview={this._showPreview} /> : null}
+        {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} audience={this.state.audience} addItem={(e) => this._saveItem2(e)} remove={(i) => this._deleteItem2(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreen={this._exitPopUp} /> : null}
 
-        {this.state.stepThree ? <Three value={(e) => this._saveInput3(e)} tov={this.state.tov} addItem={(e) => this._saveItem3(e)} remove={(i) => this._deleteItem3(i)} backToSteps={this._showSteps} showPreview={this._showPreview} /> : null}
+        {this.state.stepThree ? <Three value={(e) => this._saveInput3(e)} tov={this.state.tov} addItem={(e) => this._saveItem3(e)} remove={(i) => this._deleteItem3(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreen={this._exitPopUp} /> : null}
 
-        {this.state.stepFour ? <Four value={(e) => this._saveInput4(e)} pod={this.state.pod} addItem={(e) => this._saveItem4(e)} remove={(i) => this._deleteItem4(i)} backToSteps={this._showSteps} showPreview={this._showPreview} /> : null}
+        {this.state.stepFour ? <Four value={(e) => this._saveInput4(e)} pod={this.state.pod} addItem={(e) => this._saveItem4(e)} remove={(i) => this._deleteItem4(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreen={this._exitPopUp} /> : null}
 
-        {this.state.stepFive ? <Five value={(e) => this._saveInput5(e)} names={this.state.names} addItem={(e) => this._saveItem5(e)} remove={(i) => this._deleteItem5(i)} backToSteps={this._showSteps} showPreview={this._showPreview} /> : null}
+        {this.state.stepFive ? <Five value={(e) => this._saveInput5(e)} names={this.state.names} addItem={(e) => this._saveItem5(e)} remove={(i) => this._deleteItem5(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreen={this._exitPopUp} /> : null}
 
-        {this.state.sessionPreview ? <Preview identity={this.state.identity} audience={this.state.audience} tov={this.state.tov} pod={this.state.pod} names={this.state.names} backToSteps={this._showSteps} /> : null}
+        {this.state.sessionPreview ? <Preview identity={this.state.identity} audience={this.state.audience} tov={this.state.tov} pod={this.state.pod} names={this.state.names} backToSteps={this._showSteps} exitScreen={this._exitPopUp} /> : null}
 
         {this.state.exitPopUp ? <ExitPopUp /> : null}
       </div>
@@ -348,14 +348,3 @@ class App extends Component {
 }
 
 export default App;
-
-// printDocument() {
-// const input = document.getElementById('divToPrint');
-// html2canvas(input).then((canvas) => {
-//     const imgData = canvas.toDataURL('image/png');
-//     const pdf = new jsPDF();
-//     pdf.addImage(imgData, 'JPEG', 0, 0);
-//     // pdf.output('dataurlnewwindow');
-//     pdf.save("download.pdf");
-//   });
-// }
