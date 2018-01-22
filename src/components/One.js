@@ -91,8 +91,9 @@ class One extends Component {
   render () {
     return (
       <div id="stepOneContainer">
-        <button id='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
+        <button id='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4770/39797943482_e083e15fe2.jpg'
       } /></button>
+        <h1 className="MainHeading">Magic Beans</h1>
         <a href="#"><div id="exit">Exit</div></a>
         <button className='previewButton' onClick={this._showPreview}>Preview Session</button>
         <h1>Brand Identity</h1>

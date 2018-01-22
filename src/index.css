@@ -22,8 +22,8 @@ body {
 }
 
 #logo {
-  width: 58px;
-  height: 55px;
+  width: 60px;
+  height: 57px;
 }
 
 #logobutton {
@@ -31,12 +31,31 @@ body {
   position: fixed;
   left: 0;
   top: 0;
+  border: none;
 }
 
 .logobutton {
   position: fixed;
   left: 0;
   top: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.logobutton:active, #logobutton:active, .logobutton:focus, #logobutton:focus {
+  box-shadow: none;
+  border-style: none;
+  outline: none;
+}
+
+.MainHeading {
+  color: #007EF6;
+  font-size: 35px;
+  position: fixed;
+  top: 0;
+  left: 1.9em;
+  margin: 0.1em;
+  font-weight: 600;
 }
 
 #exit {
@@ -49,12 +68,19 @@ body {
   background-color: white;
   font-weight: 700;
   font-size: 22px;
-}
-
-#exit, a {
   color: black;
   padding-top: 20px;
+  border: none;
 }
+
+.exitButton {
+  position: fixed;
+  left: 0;
+  top: 0;
+  border: none;
+  cursor: pointer;
+}
+
 
 #wrapper {
   width: 100%;
@@ -91,6 +117,7 @@ body {
 #one:hover {
   width: 30%;
   background-color: #ff0018;
+  cursor: pointer;
 }
 
 #buttonContainer:hover > *:not(:hover) {
@@ -112,6 +139,7 @@ body {
 #two:hover {
   width: 30%;
   background-color: #ffe501;
+  cursor: pointer;
 }
 
 #three {
@@ -128,6 +156,7 @@ body {
 #three:hover {
   width: 30%;
   background-color: #2020da;
+  cursor: pointer;
 }
 
 #four {
@@ -144,8 +173,8 @@ body {
 
 #four:hover {
   width: 30%;
-  /* background-color: #0df15e; */
   background-color: #0afb04;
+  cursor: pointer;
 }
 
 #five {
@@ -162,6 +191,7 @@ body {
 #five:hover {
   width: 30%;
   background-color: #f907eb;
+  cursor: pointer;
 }
 
 /*//////////////////STEP 1//////////////////////*/

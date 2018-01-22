@@ -62,6 +62,7 @@ class App extends Component {
     this._saveItem5 = this._saveItem5.bind(this);
 
     this._showPreview = this._showPreview.bind(this);
+    this._exitPopUp = this._exitPopUp.bind(this);
   }
 
   componentDidMount() {
@@ -309,12 +310,16 @@ class App extends Component {
     console.log("opening your PDF preview");
   }
 
+  _exitPopUp() {
+    console.log("activate exit pop up screen");
+  }
+
   render() {
     return (
       <div>
         {this.state.showSession ? <Session hide={() => this._steps()} /> : null}
 
-        {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} backToSteps={this._showSteps} showPreview={this._showPreview} /> : null}
+        {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreen={this._exitPopUp} /> : null}
 
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
 

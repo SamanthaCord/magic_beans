@@ -18,6 +18,7 @@ class Steps extends Component {
       this._handleClickFour = this._handleClickFour.bind(this);
       this._handleClickFive = this._handleClickFive.bind(this);
       this._showPreview = this._showPreview.bind(this);
+      this._exitPopUp = this._exitPopUp.bind(this);
   }
 
   _changeScreen() {
@@ -53,12 +54,17 @@ class Steps extends Component {
     this.props.showPreview()
   }
 
+  _exitPopUp () {
+    this.props.exitScreen()
+  }
+
   render () {
     return (
       <div id="wrapper">
-        <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
+        <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4770/39797943482_e083e15fe2.jpg'
       } /></button>
-        <a href="#"><div id="exit">Exit</div></a>
+        <h1 className="MainHeading">Magic Beans</h1>
+        <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
         <button className='previewButton' onClick={this._showPreview}>Preview Session</button>
         <div id="buttonContainer">
           <button onClick={this._handleClickOne} id="one">1</button>
