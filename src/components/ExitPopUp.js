@@ -5,6 +5,12 @@ class ExitPopUp extends Component {
     super(props);
     this._endSession = this._endSession.bind(this);
     this._exitPopUpClose = this._exitPopUpClose.bind(this);
+    this._seeSessionNotes = this._seeSessionNotes.bind(this);
+  }
+
+  _seeSessionNotes() {
+    this.props.seeSessionNotes()
+    console.log("show preview page");
   }
 
   _endSession() {
@@ -24,6 +30,7 @@ class ExitPopUp extends Component {
           <h1>Ideas are down, brains are tired, lets get outta here! <br />
           <br />
           Confirm youre officially done here by clicking the 'End Session' button & print your findings. Please note like all good ideas, our sessions are fleeting. Once you hit the confirm button your session is erased.</h1>
+          <button onClick={this._seeSessionNotes}>Print Session</button>
           <button onClick={this._endSession}>End Session</button>
       </div>
         <div className="exitPage">

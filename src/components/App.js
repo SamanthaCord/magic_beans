@@ -13,7 +13,6 @@ import ExitPopUp from './ExitPopUp';
 import '../index.css';
 
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -310,6 +309,7 @@ class App extends Component {
     this.setState({showSession: false});
     this.setState({pageCount: 1});
     this.setState({showHome: false});
+    this.setState({exitPopUp: false});
     console.log("opening your PDF preview");
   }
 
@@ -326,10 +326,10 @@ class App extends Component {
 
   _endSession() {
     localStorage.clear();
+    this.setState({showHome: true});
+    this.setState({sessionPreview: false});
     this.setState({exitPopUp: false});
-    this.setState({showSteps: false});
     this.setState({pageCount: 1});
-    this.setState({sessionPreview: true});
     this.setState({msg: 0});
     }
 
@@ -360,7 +360,7 @@ class App extends Component {
 
         {this.state.sessionPreview ? <Preview identity={this.state.identity} audience={this.state.audience} tov={this.state.tov} pod={this.state.pod} names={this.state.names} backToSteps={this._showSteps} exitScreenOpen={this._exitPopUp} hideMsg={this._hideMsg} msg={this.state.msg} /> : null}
 
-        {this.state.exitPopUp ? <ExitPopUp endSession={this._endSession} exitScreenClose={this._closePopUp} /> : null}
+        {this.state.exitPopUp ? <ExitPopUp endSession={this._endSession} seeSessionNotes={this._showPreview} exitScreenClose={this._closePopUp} /> : null}
       </div>
     );
   }
