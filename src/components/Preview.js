@@ -5,7 +5,15 @@ import html2canvas from 'html2canvas';
 class Preview extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      defaultMessage: "Your session awaits! Keep adding keywords to explore your new idea and / or brand. Is that a spring in your step? Yes! We knew you could do it! Go! Thrill, Excite & Inspire! We believe in you!! ... Too much? Sorry about that.",
+      msg: 0
+    }
     this._changeScreen = this._changeScreen.bind(this);
+  }
+
+  componentDidMount() {
+    setTimeout(this.props.hideMsg, 6000)
   }
 
   _changeScreen() {
@@ -24,7 +32,7 @@ class Preview extends Component {
 
   render() {
 
-    return(
+    return (
       <div id="previewContainer">
         <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
         } /></button>
@@ -41,6 +49,8 @@ class Preview extends Component {
           "marginLeft": 'auto',
           "marginRight": 'auto'
         }}>
+          <div>{this.props.msg === 0 ? this.state.defaultMessage : null}</div>
+          <br />
           <div><h3>Brand Identity</h3>{this.props.identity.join(', ')}</div>
           <br />
           <div><h3>Audience</h3>{this.props.audience.join(', ')}</div>

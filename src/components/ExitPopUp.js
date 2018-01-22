@@ -7,6 +7,7 @@ class ExitPopUp extends Component {
   }
 
   _endSession() {
+    this.props.endSession()
     console.log("Ready to clear session");
   }
 

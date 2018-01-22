@@ -31,7 +31,8 @@ class App extends Component {
       pod: [],
       names: [],
       sessionPreview: false,
-      exitPopUp: false
+      exitPopUp: false,
+      msg: 0
     };
 
     this._session = this._session.bind(this);
@@ -65,6 +66,8 @@ class App extends Component {
 
     this._showPreview = this._showPreview.bind(this);
     this._exitPopUp = this._exitPopUp.bind(this);
+    this._endSession = this._endSession.bind(this);
+    this._hideMsg = this._hideMsg.bind(this);
   }
 
   componentDidMount() {
@@ -316,9 +319,23 @@ class App extends Component {
   _exitPopUp() {
     this.setState({exitPopUp: true});
     this.setState({showHome: false});
-    this.setState({showSession: false});
     console.log("open exit screen");
   }
+
+  _endSession() {
+    localStorage.clear();
+    this.setState({exitPopUp: false});
+    this.setState({showSteps: false});
+    this.setState({pageCount: 1});
+    this.setState({sessionPreview: true});
+    this.setState({msg: 0});
+    }
+
+  _hideMsg() {
+    this.setState({msg: 1});
+    console.log(this.state.msg);
+  }
+
 
   render() {
     return (
@@ -339,9 +356,9 @@ class App extends Component {
 
         {this.state.stepFive ? <Five value={(e) => this._saveInput5(e)} names={this.state.names} addItem={(e) => this._saveItem5(e)} remove={(i) => this._deleteItem5(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreen={this._exitPopUp} /> : null}
 
-        {this.state.sessionPreview ? <Preview identity={this.state.identity} audience={this.state.audience} tov={this.state.tov} pod={this.state.pod} names={this.state.names} backToSteps={this._showSteps} exitScreen={this._exitPopUp} /> : null}
+        {this.state.sessionPreview ? <Preview identity={this.state.identity} audience={this.state.audience} tov={this.state.tov} pod={this.state.pod} names={this.state.names} backToSteps={this._showSteps} exitScreen={this._exitPopUp} hideMsg={this._hideMsg} msg={this.state.msg} /> : null}
 
-        {this.state.exitPopUp ? <ExitPopUp /> : null}
+        {this.state.exitPopUp ? <ExitPopUp endSession={this._endSession} /> : null}
       </div>
     );
   }
