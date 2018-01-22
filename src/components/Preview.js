@@ -47,12 +47,14 @@ class Preview extends Component {
           <button onClick={this.printDocument}>Print Session Notes</button>
         </div>
         <div id="divToPrint" className="mt4" style={{
-          "backgroundColor": '#f5f5f5',
+          "backgroundColor": '#e3e3e3',
+          "color": "black",
           "width": '210mm',
           "minHeight": '50mm',
           "padding": '50px',
           "marginLeft": 'auto',
-          "marginRight": 'auto'
+          "marginRight": 'auto',
+          "fontFamily": 'Montserrat'
         }}>
           <div>{this.props.msg === 0 ? this.state.defaultMessage : null}</div>
           <br />

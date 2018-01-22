@@ -13,6 +13,7 @@ import ExitPopUp from './ExitPopUp';
 import '../index.css';
 
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -117,7 +118,6 @@ class App extends Component {
   _firstStep() {
     this.setState({stepOne: true});
     this.setState({showSession: false});
-    this.setState({pageCount: 1});
     this.setState({showHome: false});
     this.setState({sessionPreview: false});
     console.log("working on opening step 1");
@@ -162,7 +162,6 @@ class App extends Component {
     this.setState({stepTwo: true});
     this.setState({stepOne: false});
     this.setState({showSession: false});
-    this.setState({pageCount: 1});
     this.setState({showHome: false});
     this.setState({sessionPreview: false});
     console.log("working on opening step 2");
@@ -192,7 +191,6 @@ class App extends Component {
     this.setState({stepTwo: false});
     this.setState({stepOne: false});
     this.setState({showSession: false});
-    this.setState({pageCount: 1});
     this.setState({showHome: false});
     this.setState({sessionPreview: false});
     console.log("working on opening step 3");
@@ -231,7 +229,6 @@ class App extends Component {
     this.setState({stepTwo: false});
     this.setState({stepOne: false});
     this.setState({showSession: false});
-    this.setState({pageCount: 1});
     this.setState({showHome: false});
     this.setState({sessionPreview: false});
     console.log("working on opening step 3");
@@ -271,7 +268,6 @@ class App extends Component {
     this.setState({stepTwo: false});
     this.setState({stepOne: false});
     this.setState({showSession: false});
-    this.setState({pageCount: 1});
     this.setState({showHome: false});
     this.setState({sessionPreview: false});
     console.log("working on opening step 5");

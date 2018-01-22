@@ -10,7 +10,7 @@
 
 body {
   font-family: sans-serif;
-  background-color: grey;
+  background-color: white;
   text-align: center;
 }
 
@@ -88,7 +88,30 @@ body {
   position: absolute;
   z-index: -1;
   border: 60px black solid;
+  -webkit-animation: slide-right 0.3s;
+  animation: slide-right 0.3s;
 }
+
+@keyframes slide-right {
+  from {
+    margin-right: 100%;
+  }
+
+  to {
+    margin-right: 0%;
+  }
+}
+
+ @-webkit-keyframes slide-right {
+   from {
+     margin-right: 100%;
+   }
+
+   to {
+     margin-right: 0%;
+   }
+ }
+
 
 .previewButton {
   z-index: 99;
@@ -200,11 +223,33 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  right: -100%;
   border: 60px black solid;
-  z-index: -1;
+  z-index: 1;
+  overflow: hidden;
+  -webkit-animation: slide-left 0.3s;
+  animation: slide-left 0.3s;
+  margin-top:0%;
 }
 
+@keyframes slide-left {
+  from {
+    margin-left: 100%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
+}
+
+ @-webkit-keyframes slide-left {
+   from {
+     margin-left: 100%;
+   }
+
+   to {
+     margin-left: 0%;
+   }
+ }
 
 h1 {
   font-size: 35px;
@@ -234,7 +279,10 @@ h1 {
   height: 100%;
   width: 100%;
   border: 60px black solid;
-  z-index: -1;
+  z-index: 1;
+  overflow: hidden;
+  -webkit-animation: slide-left 0.3s;
+  animation: slide-left 0.3s;
 }
 
 .audienceContainer {
@@ -253,7 +301,10 @@ h1 {
   height: 100%;
   width: 100%;
   border: 60px black solid;
-  z-index: -1;
+  z-index: 1;
+  overflow: hidden;
+  -webkit-animation: slide-left 0.3s;
+  animation: slide-left 0.3s;
 }
 
 .tovContainer {
@@ -272,7 +323,10 @@ h1 {
   height: 100%;
   width: 100%;
   border: 60px black solid;
-  z-index: -1;
+  z-index: 1;
+  overflow: hidden;
+  -webkit-animation: slide-left 0.3s;
+  animation: slide-left 0.3s;
 }
 
 .podContainer {
@@ -291,7 +345,10 @@ h1 {
   height: 100%;
   width: 100%;
   border: 60px black solid;
-  z-index: -1;
+  z-index: 1;
+  overflow: hidden;
+  -webkit-animation: slide-left 0.3s;
+  animation: slide-left 0.3s;
 }
 
 .namingContainer {
@@ -310,7 +367,7 @@ h1 {
   height: 100%;
   width: 100%;
   border: 60px black solid;
-  z-index: -1;
+  z-index: 1;
 }
 
 .exitPage {
@@ -323,15 +380,18 @@ h1 {
   left: 0;
   right: 0;
   position: absolute;
-  z-index: -1;
+  z-index: 99;
 }
 
 #exitContainer {
   background-color: white;
   color: white;
   margin: 0 auto;
-  height: 40%;
-  width: 50%;
+  position: absolute;
+  left: 25%;
+  min-height: 40%;
+  min-width: 50%;
+  max-width: 50%;
   border: 10px black solid;
-  z-index: 1;
+  z-index: 100;
 }
