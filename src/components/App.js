@@ -7,6 +7,7 @@ import Two from './Two';
 import Three from './Three';
 import Four from './Four';
 import Five from './Five';
+import Preview from './Preview';
 
 import '../index.css';
 
@@ -27,8 +28,10 @@ class App extends Component {
       audience: [],
       tov: [],
       pod: [],
-      names: []
+      names: [],
+      sessionPreview: false
     };
+
     this._session = this._session.bind(this);
     this._steps = this._steps.bind(this);
     this._showSteps = this._showSteps.bind(this);
@@ -57,7 +60,10 @@ class App extends Component {
     this._saveInput5 = this._saveInput5.bind(this);
     this._deleteItem5 = this._deleteItem5.bind(this);
     this._saveItem5 = this._saveItem5.bind(this);
+
+    this._showPreview = this._showPreview.bind(this);
   }
+
   componentDidMount() {
     if(localStorage.getItem('stepone')){
       this.setState({identity: JSON.parse(localStorage.getItem('stepone'))})
@@ -94,7 +100,8 @@ class App extends Component {
       stepThree: false,
       stepFour: false,
       stepFive: false,
-      showSession: false
+      showSession: false,
+      sessionPreview: false
     });
     console.log(this.state.pageCount);
   }
@@ -104,6 +111,7 @@ class App extends Component {
     this.setState({showSession: false});
     this.setState({pageCount: 1});
     this.setState({showHome: false});
+    this.setState({sessionPreview: false});
     console.log("working on opening step 1");
   }
 
@@ -148,6 +156,7 @@ class App extends Component {
     this.setState({showSession: false});
     this.setState({pageCount: 1});
     this.setState({showHome: false});
+    this.setState({sessionPreview: false});
     console.log("working on opening step 2");
   }
 
@@ -177,6 +186,7 @@ class App extends Component {
     this.setState({showSession: false});
     this.setState({pageCount: 1});
     this.setState({showHome: false});
+    this.setState({sessionPreview: false});
     console.log("working on opening step 3");
   }
 
@@ -215,6 +225,7 @@ class App extends Component {
     this.setState({showSession: false});
     this.setState({pageCount: 1});
     this.setState({showHome: false});
+    this.setState({sessionPreview: false});
     console.log("working on opening step 3");
   }
 
@@ -254,6 +265,7 @@ class App extends Component {
     this.setState({showSession: false});
     this.setState({pageCount: 1});
     this.setState({showHome: false});
+    this.setState({sessionPreview: false});
     console.log("working on opening step 5");
   }
 
@@ -284,12 +296,25 @@ class App extends Component {
     console.log(e);
   }
 
+  _showPreview() {
+    this.setState({sessionPreview: true});
+    this.setState({stepFive: false});
+    this.setState({stepFour: false});
+    this.setState({stepThree: false});
+    this.setState({stepTwo: false});
+    this.setState({stepOne: false});
+    this.setState({showSession: false});
+    this.setState({pageCount: 1});
+    this.setState({showHome: false});
+    console.log("opening your PDF preview");
+  }
+
   render() {
     return (
       <div>
         {this.state.showSession ? <Session hide={() => this._steps()} /> : null}
 
-        {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} backToSteps={this._showSteps} /> : null}
+        {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} backToSteps={this._showSteps} showPreview={this._showPreview} /> : null}
 
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
 
@@ -302,9 +327,23 @@ class App extends Component {
         {this.state.stepFour ? <Four value={(e) => this._saveInput4(e)} pod={this.state.pod} addItem={(e) => this._saveItem4(e)} remove={(i) => this._deleteItem4(i)} backToSteps={this._showSteps} /> : null}
 
         {this.state.stepFive ? <Five value={(e) => this._saveInput5(e)} names={this.state.names} addItem={(e) => this._saveItem5(e)} remove={(i) => this._deleteItem5(i)} backToSteps={this._showSteps} /> : null}
+
+        {this.state.sessionPreview ? <Preview identity={this.state.identity} audience={this.state.audience} tov={this.state.tov} pod={this.state.pod} names={this.state.names} backToSteps={this._showSteps} /> : null}
+
       </div>
     );
   }
 }
 
 export default App;
+
+// printDocument() {
+// const input = document.getElementById('divToPrint');
+// html2canvas(input).then((canvas) => {
+//     const imgData = canvas.toDataURL('image/png');
+//     const pdf = new jsPDF();
+//     pdf.addImage(imgData, 'JPEG', 0, 0);
+//     // pdf.output('dataurlnewwindow');
+//     pdf.save("download.pdf");
+//   });
+// }

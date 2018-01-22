@@ -61,7 +61,13 @@ body {
   height: 100%;
   position: absolute;
   z-index: 3;
-  border-top: 60px black solid;
+  border: 60px black solid;
+}
+
+.previewButton {
+  z-index: 99;
+  position: fixed;
+  bottom: 0;  
 }
 
 #buttonContainer {
