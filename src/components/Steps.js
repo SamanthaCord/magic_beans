@@ -47,7 +47,7 @@ class Steps extends Component {
   }
 
   _exitPopUp() {
-    this.props.exitScreen()
+    this.props.exitScreenOpen()
   }
 
   render() {

@@ -4,6 +4,7 @@ class ExitPopUp extends Component {
   constructor(props) {
     super(props);
     this._endSession = this._endSession.bind(this);
+    this._exitPopUpClose = this._exitPopUpClose.bind(this);
   }
 
   _endSession() {
@@ -11,11 +12,15 @@ class ExitPopUp extends Component {
     console.log("Ready to clear session");
   }
 
+  _exitPopUpClose() {
+    this.props.exitScreenClose()
+  }
+
   render() {
     return (
       <div>
       <div id="exitContainer">
-          <h1>&times;</h1>
+          <button onClick={this._exitPopUpClose}><h1>&times;</h1></button>
           <h1>Ideas are down, brains are tired, lets get outta here! <br />
           <br />
           Confirm youre officially done here by clicking the 'End Session' button & print your findings. Please note like all good ideas, our sessions are fleeting. Once you hit the confirm button your session is erased.</h1>

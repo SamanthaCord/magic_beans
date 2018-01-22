@@ -66,6 +66,7 @@ class App extends Component {
 
     this._showPreview = this._showPreview.bind(this);
     this._exitPopUp = this._exitPopUp.bind(this);
+    this._closePopUp = this._closePopUp.bind(this);
     this._endSession = this._endSession.bind(this);
     this._hideMsg = this._hideMsg.bind(this);
   }
@@ -322,6 +323,11 @@ class App extends Component {
     console.log("open exit screen");
   }
 
+  _closePopUp() {
+    this.setState({exitPopUp:false});
+    console.log("close exit screen");
+  }
+
   _endSession() {
     localStorage.clear();
     this.setState({exitPopUp: false});
@@ -342,23 +348,23 @@ class App extends Component {
       <div>
         {this.state.showSession ? <Session hide={() => this._steps()} /> : null}
 
-        {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreen={this._exitPopUp} /> : null}
+        {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
 
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
 
-        {this.state.stepOne ? <One value={(e) => this._saveInput(e)} identity={this.state.identity} addItem={(e) => this._saveItem(e)} remove={(i) => this._deleteItem(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreen={this._exitPopUp} /> : null}
+        {this.state.stepOne ? <One value={(e) => this._saveInput(e)} identity={this.state.identity} addItem={(e) => this._saveItem(e)} remove={(i) => this._deleteItem(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
 
-        {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} audience={this.state.audience} addItem={(e) => this._saveItem2(e)} remove={(i) => this._deleteItem2(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreen={this._exitPopUp} /> : null}
+        {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} audience={this.state.audience} addItem={(e) => this._saveItem2(e)} remove={(i) => this._deleteItem2(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
 
-        {this.state.stepThree ? <Three value={(e) => this._saveInput3(e)} tov={this.state.tov} addItem={(e) => this._saveItem3(e)} remove={(i) => this._deleteItem3(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreen={this._exitPopUp} /> : null}
+        {this.state.stepThree ? <Three value={(e) => this._saveInput3(e)} tov={this.state.tov} addItem={(e) => this._saveItem3(e)} remove={(i) => this._deleteItem3(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
 
-        {this.state.stepFour ? <Four value={(e) => this._saveInput4(e)} pod={this.state.pod} addItem={(e) => this._saveItem4(e)} remove={(i) => this._deleteItem4(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreen={this._exitPopUp} /> : null}
+        {this.state.stepFour ? <Four value={(e) => this._saveInput4(e)} pod={this.state.pod} addItem={(e) => this._saveItem4(e)} remove={(i) => this._deleteItem4(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
 
-        {this.state.stepFive ? <Five value={(e) => this._saveInput5(e)} names={this.state.names} addItem={(e) => this._saveItem5(e)} remove={(i) => this._deleteItem5(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreen={this._exitPopUp} /> : null}
+        {this.state.stepFive ? <Five value={(e) => this._saveInput5(e)} names={this.state.names} addItem={(e) => this._saveItem5(e)} remove={(i) => this._deleteItem5(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
 
-        {this.state.sessionPreview ? <Preview identity={this.state.identity} audience={this.state.audience} tov={this.state.tov} pod={this.state.pod} names={this.state.names} backToSteps={this._showSteps} exitScreen={this._exitPopUp} hideMsg={this._hideMsg} msg={this.state.msg} /> : null}
+        {this.state.sessionPreview ? <Preview identity={this.state.identity} audience={this.state.audience} tov={this.state.tov} pod={this.state.pod} names={this.state.names} backToSteps={this._showSteps} exitScreenOpen={this._exitPopUp} hideMsg={this._hideMsg} msg={this.state.msg} /> : null}
 
-        {this.state.exitPopUp ? <ExitPopUp endSession={this._endSession} /> : null}
+        {this.state.exitPopUp ? <ExitPopUp endSession={this._endSession} exitScreenClose={this._closePopUp} /> : null}
       </div>
     );
   }

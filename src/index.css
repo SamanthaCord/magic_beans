@@ -200,9 +200,11 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
+  right: -100%;
   border: 60px black solid;
   z-index: -1;
 }
+
 
 h1 {
   font-size: 35px;
