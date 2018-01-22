@@ -1,11 +1,4 @@
 import React, { PureComponent as Component } from 'react';
-import App from './App';
-import Steps from './Steps';
-import One from './One';
-import Two from './Two';
-import Three from './Three';
-import Four from './Four';
-import Five from './Five';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 

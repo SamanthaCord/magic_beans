@@ -1,7 +1,4 @@
 import React, { PureComponent as Component } from 'react';
-import App from './App';
-import Steps from './Steps';
-
 
 class Two extends Component {
   constructor(props) {

@@ -1,7 +1,4 @@
 import React, { PureComponent as Component } from 'react';
-import App from './App';
-
-
 
 class Home extends Component {
   constructor(props) {

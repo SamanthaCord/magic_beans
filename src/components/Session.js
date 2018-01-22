@@ -1,12 +1,6 @@
 import React, { PureComponent as Component } from 'react';
-import App from './App';
-
-
 
 class Session extends Component {
-  constructor (props) {
-    super(props);
-  }
 
   componentDidMount() {
   setTimeout(this.props.hide, 2000)

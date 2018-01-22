@@ -8,6 +8,7 @@ import Three from './Three';
 import Four from './Four';
 import Five from './Five';
 import Preview from './Preview';
+import ExitPopUp from './ExitPopUp';
 
 import '../index.css';
 
@@ -29,7 +30,8 @@ class App extends Component {
       tov: [],
       pod: [],
       names: [],
-      sessionPreview: false
+      sessionPreview: false,
+      exitPopUp: false
     };
 
     this._session = this._session.bind(this);
@@ -90,6 +92,7 @@ class App extends Component {
 
   _steps() {
     this.setState({pageCount: 2});
+    this.setState({showSession: false});
     console.log("page count increased to 2");
   }
 
@@ -311,7 +314,10 @@ class App extends Component {
   }
 
   _exitPopUp() {
-    console.log("activate exit pop up screen");
+    this.setState({exitPopUp: true});
+    this.setState({showHome: false});
+    this.setState({showSession: false});
+    console.log("open exit screen");
   }
 
   render() {
@@ -335,6 +341,7 @@ class App extends Component {
 
         {this.state.sessionPreview ? <Preview identity={this.state.identity} audience={this.state.audience} tov={this.state.tov} pod={this.state.pod} names={this.state.names} backToSteps={this._showSteps} /> : null}
 
+        {this.state.exitPopUp ? <ExitPopUp /> : null}
       </div>
     );
   }

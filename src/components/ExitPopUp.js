@@ -1,21 +1,26 @@
 import React, { PureComponent as Component } from 'react';
-import App from './App';
-import One from './One';
-import Two from './Two';
-import Three from './Three';
-import Four from './Four';
-import Five from './Five';
-import Preview from './Preview';
 
 class ExitPopUp extends Component {
   constructor(props) {
     super(props);
+    this._endSession = this._endSession.bind(this);
+  }
+
+  _endSession() {
+    console.log("Ready to clear session");
   }
 
   render() {
     return (
       <div>
-        <h1>Exit Pop Up</h1>
+      <div id="exitContainer">
+          <h1>Ideas are down, brains are tired, lets get outta here! <br />
+          <br />
+          Confirm youre officially done here by clicking the 'End Session' button & print your findings. Please note like all good ideas, our sessions are fleeting. Once you hit the confirm button your session is erased.</h1>
+          <button onClick={this._endSession}>End Session</button>
+      </div>
+        <div className="exitPage">
+        </div>
       </div>
     );
   }
