@@ -19,6 +19,7 @@ class Three extends Component {
     this._handleClick = this._handleClick.bind(this);
     this.randomise = this.randomise.bind(this);
     this._addItem = this._addItem.bind(this);
+    this._showPreview = this._showPreview.bind(this);
   }
 
   _changeScreen() {
@@ -80,12 +81,17 @@ class Three extends Component {
     )
   }
 
+  _showPreview () {
+    this.props.showPreview()
+  }
+
   render() {
     return(
       <div id="stepThreeContainer">
         <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
         } /></button>
         <a href="#"><div id="exit">Exit</div></a>
+        <button className='previewButton' onClick={this._showPreview}>Preview Session</button>
         <h1>Tone of Voice</h1>
         {!this.state.newPhrase ? <h1>How will your idea / brand communicate?</h1> : <h1>{this.state.newPhrase}</h1>}
         <button onClick={this._changeHeading}>icon</button>

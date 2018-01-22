@@ -20,6 +20,7 @@ class One extends Component {
     this.randomise = this.randomise.bind(this);
     this._addItem = this._addItem.bind(this);
     this._changeHeading = this._changeHeading.bind(this);
+    this._showPreview = this._showPreview.bind(this);
   }
 
   componentDidMount(){
@@ -83,12 +84,17 @@ class One extends Component {
     this.setState({newPhrase: newHeading.splice(Math.floor(Math.random()*newHeading.length),1)})
   }
 
+  _showPreview () {
+    this.props.showPreview()
+  }
+
   render () {
     return (
       <div id="stepOneContainer">
         <button id='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
       } /></button>
         <a href="#"><div id="exit">Exit</div></a>
+        <button className='previewButton' onClick={this._showPreview}>Preview Session</button>
         <h1>Brand Identity</h1>
         {!this.state.newPhrase ? <h1>How do you want your brand to be percieved?</h1> : <h1>{this.state.newPhrase}</h1>}
         <button onClick={this._changeHeading}>icon</button>
