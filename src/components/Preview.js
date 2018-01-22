@@ -10,6 +10,7 @@ class Preview extends Component {
       msg: 0
     }
     this._changeScreen = this._changeScreen.bind(this);
+    this._exitPopUp = this._exitPopUp.bind(this);
   }
 
   componentDidMount() {
@@ -30,13 +31,17 @@ class Preview extends Component {
     });
   }
 
+  _exitPopUp() {
+    this.props.exitScreen()
+  }
+
   render() {
 
     return (
       <div id="previewContainer">
         <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
         } /></button>
-        <a href="#"><div id="exit">Exit</div></a>
+        <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
         <h1>Preview</h1>
         <div className="mb5">
           <button onClick={this.printDocument}>Print Session Notes</button>
