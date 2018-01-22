@@ -32,7 +32,7 @@ class Preview extends Component {
   render () {
 
     return(
-      <div>
+      <div id="previewContainer">
         <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
         } /></button>
         <a href="#"><div id="exit">Exit</div></a>
@@ -43,7 +43,8 @@ class Preview extends Component {
         <div id="divToPrint" className="mt4" style={{
           "backgroundColor": '#f5f5f5',
           "width": '210mm',
-          "minHeight": '297mm',
+          "minHeight": '50mm',
+          "padding": '50px',
           "marginLeft": 'auto',
           "marginRight": 'auto'
         }}>

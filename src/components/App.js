@@ -78,7 +78,7 @@ class App extends Component {
       this.setState({pod: JSON.parse(localStorage.getItem('stepfour'))})
     }
     if(localStorage.getItem('stepfive')){
-      this.setState({pod: JSON.parse(localStorage.getItem('stepfive'))})
+      this.setState({names: JSON.parse(localStorage.getItem('stepfive'))})
     }
   }
 
