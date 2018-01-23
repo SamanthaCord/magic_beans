@@ -72,11 +72,11 @@ class Two extends Component {
 
     return (
       <div>
-        <button value={this.state.randoms[0]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[0]}</button>
-        <button value={this.state.randoms[1]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[1]}</button>
-        <button value={this.state.randoms[2]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[2]}</button>
-        <button value={this.state.randoms[3]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[3]}</button>
-        <button value={this.state.randoms[4]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[4]}</button>
+        <button className="suggestionButtons" value={this.state.randoms[0]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[0]}</button>
+        <button className="suggestionButtons" value={this.state.randoms[1]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[1]}</button>
+        <button className="suggestionButtons" value={this.state.randoms[2]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[2]}</button>
+        <button className="suggestionButtons" value={this.state.randoms[3]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[3]}</button>
+        <button className="suggestionButtons" value={this.state.randoms[4]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[4]}</button>
       </div>
     )
   }
@@ -99,15 +99,19 @@ class Two extends Component {
         <button className="stepsButton" onClick={this._changeScreen}><div id="steps">Back To Steps</div></button>
         <button className='previewButton' onClick={this._showPreview}>See Session Notes</button>
         <h1>Audience</h1>
-        {!this.state.newPhrase ? <h1>Who is your audience?</h1> : <h1>{this.state.newPhrase}</h1>}
-        <button onClick={this._changeHeading}>icon</button>
-        {this.randomise()}
+        {!this.state.newPhrase ? <h1 className="QuestionHeading">Who is your audience?</h1> : <h1 className="QuestionHeading">{this.state.newPhrase}</h1>}
+        <br />
+        <button onClick={this._changeHeading} className="refreshButton"><i className="zmdi zmdi-refresh"></i></button>
+        <div>
+          <p className="suggestionsHeading">STUCK? ADD SOME OF THESE:</p>
+          {this.randomise()}
+        </div>
         <form onSubmit={this._handleSubmit}>
-          <input type="search" onChange={this._handleChange} value={this.state.query} />
+          <input type="search" className="stepsInputField" placeHolder="Start typing here & hit enter to submit" onChange={this._handleChange} value={this.state.query} />
         </form>
         <div className="audienceContainer">
           {this.props.audience.map(i => {
-          return <p key={this.props.audience.indexOf(i)}>{i}<button onClick={()=>{this._handleClick(i)}}>&times;</button></p>})}
+          return <p className="bucketItems" key={this.props.audience.indexOf(i)}>{i}<button className="bucketItemsXIcon" onClick={()=>{this._handleClick(i)}}><i className="zmdi zmdi-close-circle"></i></button></p>})}
         </div>
       </div>
     );
