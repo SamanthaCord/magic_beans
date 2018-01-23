@@ -14,7 +14,6 @@ class One extends Component {
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleChange = this._handleChange.bind(this);
     this._handleClick = this._handleClick.bind(this);
-    this.randomise = this.randomise.bind(this);
     this._addItem = this._addItem.bind(this);
     this._changeHeading = this._changeHeading.bind(this);
     this._showPreview = this._showPreview.bind(this);
@@ -22,17 +21,22 @@ class One extends Component {
   }
 
   componentDidMount(){
-    let randomSuggest = this.state.suggestions.slice();
+    let { suggestions } = this.state;
+    const length = suggestions.length
     this.setState({randoms: [
-       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1),
-       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1),
-       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1),
-       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1),
-       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1)
+       suggestions.splice(this.randomNumber(length),1),
+       suggestions.splice(this.randomNumber(length),1),
+       suggestions.splice(this.randomNumber(length),1),
+       suggestions.splice(this.randomNumber(length),1),
+       suggestions.splice(this.randomNumber(length),1)
     ]})
   }
 
-  _changeScreen() {
+  randomNumber(length) {
+    return Math.floor(Math.random() * length)
+  }
+
+  _changeScreen = () => {
     this.props.backToSteps()
   }
 
@@ -62,18 +66,13 @@ class One extends Component {
     this.props.addItem(e.target.value)
   }
 
-  randomise() {
-    let randomSuggest = this.state.suggestions.slice();
+  renderSuggestions() {
+    const { randoms } = this.state
 
-    return (
-      <div>
-        <button value={this.state.randoms[0]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[0]}</button>
-        <button value={this.state.randoms[1]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[1]}</button>
-        <button value={this.state.randoms[2]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[2]}</button>
-        <button value={this.state.randoms[3]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[3]}</button>
-        <button value={this.state.randoms[4]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[4]}</button>
-      </div>
-    )
+    return randoms.map(random => {
+      return <button value={random} onClick={(e) => {this._addItem(e)}}>{random}</button>
+    })
+
   }
 
   _changeHeading() {
@@ -98,11 +97,11 @@ class One extends Component {
         <h1 className="MainHeading">Magic Beans</h1>
         <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
         <button className="stepsButton" onClick={this._changeScreen}><div id="steps">Back To Steps</div></button>
-        <button className='previewButton' onClick={this._showPreview}>Preview Session</button>
+        <button className='previewButton' onClick={this._showPreview}>SEE MY SESSION NOTES</button>
         <h1>Brand Identity</h1>
         {!this.state.newPhrase ? <h1>How do you want your brand to be percieved?</h1> : <h1>{this.state.newPhrase}</h1>}
         <button onClick={this._changeHeading}>icon</button>
-        {this.randomise()}
+        <div>{this.renderSuggestions()}</div>
         <form onSubmit={this._handleSubmit}>
           <input type="search" onChange={this._handleChange} value={this.state.query}/>
         </form>

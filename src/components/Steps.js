@@ -57,7 +57,7 @@ class Steps extends Component {
       } /></button>
         <h1 className="MainHeading">Magic Beans</h1>
         <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
-        <button className='previewButton' onClick={this._showPreview}>See Session Notes</button>
+        <button className='previewButton' onClick={this._showPreview}>SEE MY SESSION NOTES</button>
         <div id="buttonContainer">
           <button onClick={this._handleClickOne} id="one">1</button>
           <button onClick={this._handleClickTwo} id="two">2</button>

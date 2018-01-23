@@ -13,6 +13,13 @@ import StepsNav from './StepsNav';
 
 import '../index.css';
 
+const steps = {
+  1: { storageKey: 'stepone', stateKey: 'identity' },
+  2: { storageKey: 'steptwo', stateKey: 'audience' },
+  3: { storageKey: 'stepthree', stateKey: 'tov' },
+  4: { storageKey: 'stepfour', stateKey: 'pod' },
+  5: { storageKey: 'stepfive', stateKey: 'names' }
+}
 
 class App extends Component {
   constructor(props) {
@@ -145,13 +152,17 @@ class App extends Component {
     })
   }
 
-  _saveItem(e) {
-    const update = this.state.identity.slice()
+  _saveItem(item, step) {
+    const keys = steps[step]
+    const { storageKey, stateKey } = keys
 
-    this.setState({identity: [...update, e]}, function() {
-      localStorage['stepone'] = JSON.stringify(this.state.identity);
+    const stateItemToUpdate = this.state[stateKey]
+
+    this.setState({[stateKey]: [...stateItemToUpdate, item]}, function() {
+      const stateValue = JSON.stringify(this.state[stateKey]);
+      localStorage.setItem(storageKey, stateValue);
     })
-    console.log(e);
+    console.log(item);
   }
 
   _saveInput2(e) {
@@ -359,7 +370,7 @@ class App extends Component {
 
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
 
-        {this.state.stepOne ? <One value={(e) => this._saveInput(e)} identity={this.state.identity} addItem={(e) => this._saveItem(e)} remove={(i) => this._deleteItem(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
+        {this.state.stepOne ? <One value={(e) => this._saveInput(e)} identity={this.state.identity} addItem={(e) => this._saveItem(e, 1)} remove={(i) => this._deleteItem(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
 
         {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} audience={this.state.audience} addItem={(e) => this._saveItem2(e)} remove={(i) => this._deleteItem2(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
 

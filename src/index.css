@@ -153,6 +153,24 @@ body {
   z-index: 99;
   position: fixed;
   bottom: 0;
+  width: 22%;
+  right: 39%;
+  height: 70px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  padding-top: 5px;
+  background-color: #ff0018;
+  border: none;
+  /* border-bottom: 4px solid black; */
+}
+
+.previewButton:hover {
+  cursor: pointer;
+}
+
+.previewButton:active, .previewButton:focus {
+  outline: none;
 }
 
 #buttonContainer {
@@ -501,7 +519,7 @@ h1 {
 }
 
 #stepNavOne:hover, #stepNavTwo:hover, #stepNavThree:hover,  #stepNavFour:hover, #stepNavFive:hover {
-  font-size: 120px;
+  background-color: #ff0018;
 }
 
 #stepNavOne:active, #stepNavTwo:active, #stepNavThree:active,  #stepNavFour:active, #stepNavFive:active {
@@ -509,7 +527,7 @@ h1 {
 }
 
 #editContainer {
-  background-color: #ea1909;
+  background-color: #ff0018;
   color: white;
   margin: 0 auto;
   display: inline-block;
@@ -524,4 +542,24 @@ h1 {
   text-orientation: upright;
   vertical-align: top;
   letter-spacing: 0.5;
+}
+
+/*///////////////////////////START SESSION PAGE//////////////////////////////*/
+
+#session {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#sessionHeading {
+  font-size: 80px;
+  color: #232327;
+  margin-bottom: 0.2em;
+}
+
+#sessionSubHeading {
+  font-size: 40px;
+  font-weight: 300;
 }
