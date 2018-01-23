@@ -97,6 +97,7 @@ class One extends Component {
       } /></button>
         <h1 className="MainHeading">Magic Beans</h1>
         <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
+        <button className="stepsButton" onClick={this._changeScreen}><div id="steps">Back To Steps</div></button>
         <button className='previewButton' onClick={this._showPreview}>Preview Session</button>
         <h1>Brand Identity</h1>
         {!this.state.newPhrase ? <h1>How do you want your brand to be percieved?</h1> : <h1>{this.state.newPhrase}</h1>}
@@ -107,6 +108,13 @@ class One extends Component {
         </form>
         <div className="identityContainer">
           {this.props.identity.map(i => { return <p key={this.props.identity.indexOf(i)}>{i}<button onClick={ ()=>{this._handleClick(i)} }>&times;</button></p> })}
+        </div>
+        <div className="navigationButtons">
+          <button onClick={this._handleClickOne} id="stepNavOne">1</button>
+          <button onClick={this._handleClickTwo} id="stepNavTwo">2</button>
+          <button onClick={this._handleClickThree} id="stepNavThree">3</button>
+          <button onClick={this._handleClickFour} id="stepNavFour">4</button>
+          <button onClick={this._handleClickFive} id="stepNavFive">5</button>
         </div>
       </div>
     );

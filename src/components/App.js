@@ -9,6 +9,7 @@ import Four from './Four';
 import Five from './Five';
 import Preview from './Preview';
 import ExitPopUp from './ExitPopUp';
+import StepsNav from './StepsNav';
 
 import '../index.css';
 
@@ -361,6 +362,8 @@ class App extends Component {
         {this.state.sessionPreview ? <Preview identity={this.state.identity} audience={this.state.audience} tov={this.state.tov} pod={this.state.pod} names={this.state.names} backToSteps={this._showSteps} exitScreenOpen={this._exitPopUp} hideMsg={this._hideMsg} msg={this.state.msg} /> : null}
 
         {this.state.exitPopUp ? <ExitPopUp endSession={this._endSession} seeSessionNotes={this._showPreview} exitScreenClose={this._closePopUp} /> : null}
+
+        <StepsNav showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} />
       </div>
     );
   }

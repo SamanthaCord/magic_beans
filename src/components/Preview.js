@@ -42,6 +42,7 @@ class Preview extends Component {
         <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
         } /></button>
         <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
+        <button className="stepsButton" onClick={this._changeScreen}><div id="steps">Back To Steps</div></button>
         <h1>Preview</h1>
         <div className="mb5">
           <button onClick={this.printDocument}>Print Session Notes</button>

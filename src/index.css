@@ -67,9 +67,9 @@ body {
   height: 60px;
   background-color: white;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 25px;
   color: black;
-  padding-top: 20px;
+  padding-top: 15px;
   border: none;
 }
 
@@ -80,6 +80,43 @@ body {
   border: none;
   cursor: pointer;
 }
+
+#steps {
+  z-index: 99;
+  position: fixed;
+  left: 0;
+  top: 75%;
+  min-width: 25%;
+  /* max-width: 25%; */
+  min-height: 60px;
+  background-color: blue;
+  font-weight: 600;
+  font-size: 25px;
+  color: white;
+  padding-top: 12px;
+  border: none;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+#steps:hover {
+  height: 120px;
+  font-size: 35px;
+  padding-top: 35px;
+}
+
+.stepsButton {
+  position: fixed;
+  left: 0;
+  top: 88%;
+  border: none;
+  cursor: pointer;
+}
+
 
 
 #wrapper {
@@ -269,6 +306,7 @@ h1 {
   background-color: white;
   border: 1px grey solid;
   margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 /*//////////////////STEP 2//////////////////////*/
@@ -291,6 +329,7 @@ h1 {
   background-color: white;
   border: 1px grey solid;
   margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 /*//////////////////STEP 3//////////////////////*/
@@ -313,6 +352,7 @@ h1 {
   background-color: white;
   border: 1px grey solid;
   margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 /*//////////////////STEP 4//////////////////////*/
@@ -335,6 +375,7 @@ h1 {
   background-color: white;
   border: 1px grey solid;
   margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 /*//////////////////STEP 5//////////////////////*/
@@ -357,6 +398,7 @@ h1 {
   background-color: white;
   border: 1px grey solid;
   margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 /*//////////////////PREVIEW CONTAINER//////////////////////*/
@@ -416,4 +458,47 @@ h1 {
   max-width: 50%;
   border: 10px black solid;
   z-index: 100;
+}
+
+/*//////////////////////STEP NAVIGATION//////////////////////////*/
+
+.navigationButtons {
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+  position: absolute;
+  height: 20%;
+  width: 100%;
+  bottom: 0;
+  padding: 0;
+}
+
+#stepNavOne, #stepNavThree, #stepNavFive {
+  background-color: white;
+  color: black;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  width: 20%;
+  bottom: 0;
+  padding: 0;
+  border: none;
+  font-size: 100px;
+  font-weight: 700;
+}
+
+#stepNavTwo, #stepNavFour {
+  background-color: black;
+  color: white;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  width: 20%;
+  bottom: 0;
+  padding: 0;
+  border: none;
+  font-size: 100px;
+  font-weight: 700;
 }
