@@ -491,13 +491,34 @@ h1 {
   display: inline-block;
   position: relative;
   height: 100%;
-  width: 20%;
   bottom: 0;
   padding: 0;
   border: none;
   font-size: 100px;
   font-weight: 700;
   cursor: pointer;
+}
+
+#stepNavOne {
+  border-left: 60px solid black;
+  width: 23%;
+}
+
+#stepNavTwo {
+  width: 18%;
+}
+
+#stepNavThree {
+  width: 18%;
+}
+
+#stepNavFour {
+  width: 18%;
+}
+
+#stepNavFive {
+  border-right: 60px solid black;
+  width: 23%;
 }
 
 #stepNavTwo, #stepNavFour {
@@ -507,7 +528,6 @@ h1 {
   display: inline-block;
   position: relative;
   height: 100%;
-  width: 20%;
   bottom: 0;
   padding: 0;
   border: none;
