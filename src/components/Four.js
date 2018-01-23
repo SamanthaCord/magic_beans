@@ -71,11 +71,11 @@ class Four extends Component {
 
     return (
       <div>
-        <button value={this.state.randoms[0]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[0]}</button>
-        <button value={this.state.randoms[1]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[1]}</button>
-        <button value={this.state.randoms[2]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[2]}</button>
-        <button value={this.state.randoms[3]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[3]}</button>
-        <button value={this.state.randoms[4]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[4]}</button>
+        <button className="suggestionButtons" value={this.state.randoms[0]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[0]}</button>
+        <button className="suggestionButtons" value={this.state.randoms[1]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[1]}</button>
+        <button className="suggestionButtons" value={this.state.randoms[2]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[2]}</button>
+        <button className="suggestionButtons" value={this.state.randoms[3]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[3]}</button>
+        <button className="suggestionButtons" value={this.state.randoms[4]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[4]}</button>
       </div>
     )
   }
@@ -97,16 +97,20 @@ class Four extends Component {
         <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
         <button className="stepsButton" onClick={this._changeScreen}><div id="steps">Back To Steps</div></button>
         <button className='previewButton' onClick={this._showPreview}>See Session Notes</button>
-        <h1>Point of Difference</h1>
-        {!this.state.newPhrase ? <h1>What is your POD?</h1> : <h1>{this.state.newPhrase}</h1>}
-        <button onClick={this._changeHeading}>icon</button>
+        <h1 className="stepMainHeading">POINT OF DIFFERENCE</h1>
+        {!this.state.newPhrase ? <h1 className="QuestionHeading">What is your POD?</h1> : <h1 className="QuestionHeading">{this.state.newPhrase}</h1>}
+        <br />
+        <button onClick={this._changeHeading} className="refreshButton"><i className="zmdi zmdi-refresh"></i></button>
+        <div>
+          <p className="suggestionsHeading">STUCK? ADD SOME OF THESE:</p>
+          {this.randomise()}
+        </div>
         <form onSubmit={this._handleSubmit}>
-          <input type="search" onChange={this._handleChange} value={this.state.query} />
+          <input type="search" className="stepsInputField" placeHolder="Start typing here & hit enter to submit" onChange={this._handleChange} value={this.state.query} />
         </form>
-        {this.randomise()}
         <div className="podContainer">
           {this.props.pod.map(i => {
-          return <p key={this.props.pod.indexOf(i)}>{i}<button onClick={()=>{this._handleClick(i)}}>&times;</button></p>})}
+          return <p className="bucketItems" key={this.props.pod.indexOf(i)}>{i}<button className="bucketItemsXIcon" onClick={()=>{this._handleClick(i)}}><i className="zmdi zmdi-close-circle"></i></button></p>})}
         </div>
       </div>
     )

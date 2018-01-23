@@ -26,12 +26,15 @@ class ExitPopUp extends Component {
     return (
       <div>
       <div id="exitContainer">
-          <button onClick={this._exitPopUpClose}><h1>&times;</h1></button>
-          <h1>Ideas are down, brains are tired, lets get outta here! <br />
+          <button id="XiconButton" onClick={this._exitPopUpClose}><h1 className="Xicon">&times;</h1></button>
+          <h1 className="QuestionHeading">Ideas are down, brains are tired, lets get outta here! <br />
           <br />
-          Confirm youre officially done here by clicking the 'End Session' button & print your findings. Please note like all good ideas, our sessions are fleeting. Once you hit the confirm button your session is erased.</h1>
-          <button onClick={this._seeSessionNotes}>Print Session</button>
-          <button onClick={this._endSession}>End Session</button>
+          Click 'Print Session' to save a PDF of your notes. <br /> <br /> Click 'End Session' to exit or begin a new session.</h1>
+
+          <button id="printSessionButton" onClick={this._seeSessionNotes}>Print Session</button>
+          <button id="endButton" onClick={this._endSession}>End Session</button>
+
+          <p id="exitDisclaimer">Like all good ideas, sessions are fleeting. Make sure to print / save a copy of your work, because once you hit 'end session' your session will be erased.</p>
       </div>
         <div className="exitPage">
         </div>

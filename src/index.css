@@ -163,6 +163,7 @@ body {
 .previewButton:hover {
   height: 120px;
   font-size: 35px;
+  cursor: pointer;
 }
 
 .previewButton:active, .previewButton:focus {
@@ -463,31 +464,7 @@ h1 {
    }
  } */
 
-.exitPage {
-  background-color: black;
-  opacity: 0.7;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  position: absolute;
-  z-index: 99;
-}
 
-#exitContainer {
-  background-color: white;
-  color: white;
-  margin: 0 auto;
-  position: absolute;
-  left: 25%;
-  min-height: 40%;
-  min-width: 50%;
-  max-width: 50%;
-  border: 10px black solid;
-  z-index: 100;
-}
 
 /*//////////////////////STEP NAVIGATION//////////////////////////*/
 
@@ -730,4 +707,100 @@ i.zmdi.zmdi-plus-circle {
 
 i.zmdi.zmdi-close-circle {
   color: red;
+}
+
+
+/*//////////////////////////EXIT POP UP SCREEN//////////////////////////////*/
+
+.exitPage {
+  background-color: black;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 99;
+}
+
+#exitContainer {
+  background-color: white;
+  color: white;
+  margin: 0 auto;
+  position: absolute;
+  left: 25%;
+  min-height: 40%;
+  min-width: 50%;
+  max-width: 50%;
+  border: 10px black solid;
+  z-index: 100;
+}
+
+#XiconButton {
+  border: none;
+  background-color: none;
+}
+
+#XiconButton:active, #XiconButton:focus {
+  outline: none;
+}
+
+.Xicon {
+  font-size: 60px;
+  margin: 20px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.Xicon:hover {
+  color: black;
+  cursor: pointer;
+}
+
+/*using css from '5 STEPS MAIN STYLING' for main text styling*/
+
+#printSessionButton, #endButton {
+  border: none;
+  background-color: #ff0018;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  padding: 10px;
+  margin: 20px;
+  min-width: 150px;
+  max-width: 150px;
+  min-height: 100px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+#printSessionButton {
+  background-color: blue;
+}
+
+#printSessionButton:hover {
+  border: 5px solid #ff0018;
+}
+
+#endButton:hover {
+  border: 5px solid blue;
+}
+
+
+#printSessionButton:active, #endButton:active, #printSessionButton:focus, #endButton:focus {
+  outline: none;
+}
+
+#exitDisclaimer {
+  color: black;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding-left: 1em;
+  padding-right: 1em;
 }
