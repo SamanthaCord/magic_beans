@@ -38,6 +38,7 @@ class StepsNav extends Component {
   render() {
     return (
         <div className="navigationButtons">
+          <div id="editContainer">Edit</div>
           <button onClick={this._handleClickOne} id="stepNavOne">1</button>
           <button onClick={this._handleClickTwo} id="stepNavTwo">2</button>
           <button onClick={this._handleClickThree} id="stepNavThree">3</button>
