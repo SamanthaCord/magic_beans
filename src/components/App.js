@@ -10,6 +10,7 @@ import Five from './Five';
 import Preview from './Preview';
 import ExitPopUp from './ExitPopUp';
 import StepsNav from './StepsNav';
+import SessionClosed from './SessionClosed';
 
 import '../index.css';
 
@@ -40,6 +41,7 @@ class App extends Component {
       names: [],
       sessionPreview: false,
       exitPopUp: false,
+      closedSession: false,
       msg: 0
     };
 
@@ -97,6 +99,11 @@ class App extends Component {
     }
   }
 
+  _home() {
+    this.setState({showHome: true});
+    this.setState({closedSession: false});
+  }
+
   _session() {
     this.setState({showSession: true});
     this.setState({showHome: false});
@@ -105,6 +112,7 @@ class App extends Component {
   _steps() {
     this.setState({pageCount: 2});
     this.setState({showSession: false});
+    this.setState({showHome: false});
     console.log("page count increased to 2");
   }
 
@@ -117,7 +125,8 @@ class App extends Component {
       stepFour: false,
       stepFive: false,
       showSession: false,
-      sessionPreview: false
+      sessionPreview: false,
+      showHome: false
     });
     console.log(this.state.pageCount);
   }
@@ -348,7 +357,8 @@ class App extends Component {
 
   _endSession() {
     localStorage.clear();
-    this.setState({showHome: true});
+    this.setState({showHome: false});
+    this.setState({closedSession: true});
     this.setState({sessionPreview: false});
     this.setState({exitPopUp: false});
     this.setState({pageCount: 1});
@@ -364,6 +374,7 @@ class App extends Component {
   render() {
     return (
       <div>
+
         {this.state.showSession ? <Session hide={() => this._steps()} /> : null}
 
         {this.state.pageCount === 2 ? <Steps showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
@@ -395,7 +406,11 @@ class App extends Component {
         {this.state.stepFive ? <StepsNav showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} /> : null}
 
         {this.state.sessionPreview ? <StepsNav showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} /> : null}
+
+        {this.state.closedSession ? <SessionClosed close={() => this._home()} /> : null}
+
       </div>
+
     );
   }
 }

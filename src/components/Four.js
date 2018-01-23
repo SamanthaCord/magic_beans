@@ -96,7 +96,7 @@ class Four extends Component {
         <h1 className="MainHeading">Magic Beans</h1>
         <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
         <button className="stepsButton" onClick={this._changeScreen}><div id="steps">Back To Steps</div></button>
-        <button className='previewButton' onClick={this._showPreview}>Preview Session</button>
+        <button className='previewButton' onClick={this._showPreview}>See Session Notes</button>
         <h1>Point of Difference</h1>
         {!this.state.newPhrase ? <h1>What is your POD?</h1> : <h1>{this.state.newPhrase}</h1>}
         <button onClick={this._changeHeading}>icon</button>

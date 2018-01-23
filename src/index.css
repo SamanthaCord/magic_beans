@@ -14,13 +14,6 @@ body {
   text-align: center;
 }
 
-#session {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: #e3e3e3;
-}
-
 #logo {
   width: 60px;
   height: 57px;
@@ -49,12 +42,12 @@ body {
 }
 
 .MainHeading {
-  color: #007EF6;
-  font-size: 35px;
+  color: white;
+  font-size: 22px;
   position: fixed;
-  top: 0;
-  left: 1.9em;
-  margin: 0.1em;
+  top: 0.2em;
+  left: 2.6em;
+  margin: 0.5em;
   font-weight: 600;
 }
 
@@ -66,7 +59,7 @@ body {
   width: 60px;
   height: 60px;
   background-color: white;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 25px;
   color: black;
   padding-top: 15px;
@@ -85,8 +78,8 @@ body {
   z-index: 99;
   position: fixed;
   left: 0;
-  top: 65%;
-  min-width: 25%;
+  top: 629px;
+  width: 380px;
   min-height: 60px;
   background-color: blue;
   font-weight: 600;
@@ -115,8 +108,6 @@ body {
   border: none;
   cursor: pointer;
 }
-
-
 
 #wrapper {
   width: 100%;
@@ -148,25 +139,32 @@ body {
    }
  }
 
-
 .previewButton {
   z-index: 99;
   position: fixed;
-  bottom: 0;
-  width: 22%;
-  right: 39%;
-  height: 70px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 25px;
-  font-weight: 600;
-  padding-top: 5px;
+  right: 0;
+  left: 100%;
+  top: 250px;
+  width: 380px;
+  min-height: 60px;
   background-color: #ff0018;
+  font-weight: 600;
+  font-size: 25px;
+  color: white;
+  padding-top: 12px;
   border: none;
-  /* border-bottom: 4px solid black; */
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
 }
 
 .previewButton:hover {
-  cursor: pointer;
+  height: 120px;
+  font-size: 35px;
+  padding-top: 35px;
 }
 
 .previewButton:active, .previewButton:focus {
@@ -478,7 +476,7 @@ h1 {
 .navigationButtons {
   color: white;
   margin: 0 auto;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 20%;
   bottom: 60px;
@@ -493,7 +491,7 @@ h1 {
   display: inline-block;
   position: relative;
   height: 100%;
-  width: 19%;
+  width: 20%;
   bottom: 0;
   padding: 0;
   border: none;
@@ -509,7 +507,7 @@ h1 {
   display: inline-block;
   position: relative;
   height: 100%;
-  width: 19%;
+  width: 20%;
   bottom: 0;
   padding: 0;
   border: none;
@@ -526,27 +524,14 @@ h1 {
   outline: none;
 }
 
-#editContainer {
-  background-color: #ff0018;
-  color: white;
-  margin: 0 auto;
-  display: inline-block;
-  position: relative;
-  height: 100%;
-  width: 5%;
-  padding: 0;
-  border: none;
-  font-size: 33px;
-  font-weight: 700;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  vertical-align: top;
-  letter-spacing: 0.5;
-}
 
 /*///////////////////////////START SESSION PAGE//////////////////////////////*/
 
 #session {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #e3e3e3;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -566,4 +551,36 @@ h1 {
 
 #timer {
   font-size: 100px;
+}
+
+/*///////////////////////////CLOSING SESSION PAGE//////////////////////////////*/
+
+#sessionClosingScreen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #131212;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#sessionClosedHeading {
+  font-size: 80px;
+  color: #232327;
+  margin-bottom: 0.2em;
+}
+
+#sessionClosedSubHead {
+  font-size: 40px;
+  color: #e3e3e3;
+  font-weight: 300;
+}
+
+#symbol {
+  color: #007EF6;
+  font-size: 35px;
+  font-weight: 600;
+  padding-top: 60px;
 }
