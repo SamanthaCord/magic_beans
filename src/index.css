@@ -151,7 +151,6 @@ body {
   font-weight: 600;
   font-size: 25px;
   color: white;
-  padding-top: 12px;
   border: none;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -164,7 +163,6 @@ body {
 .previewButton:hover {
   height: 120px;
   font-size: 35px;
-  padding-top: 35px;
 }
 
 .previewButton:active, .previewButton:focus {
@@ -194,6 +192,10 @@ body {
   cursor: pointer;
 }
 
+#one:active, #one:focus {
+  outline: none;
+}
+
 #buttonContainer:hover > *:not(:hover) {
  width: 17.5%;
 }
@@ -216,6 +218,10 @@ body {
   cursor: pointer;
 }
 
+#two:active, #two:focus {
+  outline: none;
+}
+
 #three {
   display: inline-block;
   position: relative;
@@ -231,6 +237,10 @@ body {
   width: 30%;
   background-color: #2020da;
   cursor: pointer;
+}
+
+#three:active, #three:focus {
+  outline: none;
 }
 
 #four {
@@ -251,6 +261,10 @@ body {
   cursor: pointer;
 }
 
+#four:active, #four:focus {
+  outline: none;
+}
+
 #five {
   display: inline-block;
   position: relative;
@@ -266,6 +280,10 @@ body {
   width: 30%;
   background-color: #f907eb;
   cursor: pointer;
+}
+
+#five:active, #five:focus {
+  outline: none;
 }
 
 /*//////////////////STEP 1//////////////////////*/
@@ -603,4 +621,48 @@ h1 {
   font-size: 35px;
   font-weight: 600;
   padding-top: 60px;
+}
+
+/*///////////////////////////5 STEPS MAIN STYLING///////////////////////////*/
+
+.stepMainHeading{
+  color: black;
+  font-size: 18px;
+}
+
+.QuestionHeading {
+  color: black;
+  font-size: 40px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 30px;
+}
+
+.stepsInputField {
+  margin: 40px;
+  width: 22%;
+  padding-bottom: 6px;
+  border: none;
+  border-bottom: 5px solid #e3e3e3;
+  font-size: 15px;
+  text-align: left;
+}
+
+.stepsInputField:active, .stepsInputField:focus, .stepsInputField:hover {
+  outline: none;
+  border: none;
+  border-bottom: 5px solid #e3e3e3;
+}
+
+.refreshButton {
+  border: none;
+}
+
+.zmdi.zmdi-refresh {
+  font-size: 30px;
+  color: blue;
+}
+
+.zmdi.zmdi-refresh:hover {
+  color: black;
 }
