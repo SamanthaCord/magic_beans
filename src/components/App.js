@@ -117,6 +117,10 @@ class App extends Component {
 
   _firstStep() {
     this.setState({stepOne: true});
+    this.setState({stepFive: false});
+    this.setState({stepFour: false});
+    this.setState({stepThree: false});
+    this.setState({stepTwo: false});
     this.setState({showSession: false});
     this.setState({showHome: false});
     this.setState({sessionPreview: false});
@@ -160,6 +164,9 @@ class App extends Component {
 
   _secondStep(e) {
     this.setState({stepTwo: true});
+    this.setState({stepFive: false});
+    this.setState({stepFour: false});
+    this.setState({stepThree: false});
     this.setState({stepOne: false});
     this.setState({showSession: false});
     this.setState({showHome: false});
@@ -188,6 +195,8 @@ class App extends Component {
 
   _thirdStep() {
     this.setState({stepThree: true});
+    this.setState({stepFive: false});
+    this.setState({stepFour: false});
     this.setState({stepTwo: false});
     this.setState({stepOne: false});
     this.setState({showSession: false});
@@ -225,6 +234,7 @@ class App extends Component {
 
   _fourthStep() {
     this.setState({stepFour: true});
+    this.setState({stepFive: false});
     this.setState({stepThree: false});
     this.setState({stepTwo: false});
     this.setState({stepOne: false});
@@ -363,7 +373,15 @@ class App extends Component {
 
         {this.state.exitPopUp ? <ExitPopUp endSession={this._endSession} seeSessionNotes={this._showPreview} exitScreenClose={this._closePopUp} /> : null}
 
-        <StepsNav showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} />
+        {this.state.stepOne ? <StepsNav showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} /> : null}
+
+        {this.state.stepTwo ? <StepsNav showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} /> : null}
+
+        {this.state.stepThree ? <StepsNav showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} /> : null}
+
+        {this.state.stepFour ? <StepsNav showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} /> : null}
+
+        {this.state.stepFive ? <StepsNav showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} /> : null}
       </div>
     );
   }

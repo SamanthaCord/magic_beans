@@ -109,13 +109,6 @@ class One extends Component {
         <div className="identityContainer">
           {this.props.identity.map(i => { return <p key={this.props.identity.indexOf(i)}>{i}<button onClick={ ()=>{this._handleClick(i)} }>&times;</button></p> })}
         </div>
-        <div className="navigationButtons">
-          <button onClick={this._handleClickOne} id="stepNavOne">1</button>
-          <button onClick={this._handleClickTwo} id="stepNavTwo">2</button>
-          <button onClick={this._handleClickThree} id="stepNavThree">3</button>
-          <button onClick={this._handleClickFour} id="stepNavFour">4</button>
-          <button onClick={this._handleClickFive} id="stepNavFive">5</button>
-        </div>
       </div>
     );
   }
