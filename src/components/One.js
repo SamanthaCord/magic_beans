@@ -70,7 +70,7 @@ class One extends Component {
     const { randoms } = this.state
 
     return randoms.map(random => {
-      return <button value={random} onClick={(e) => {this._addItem(e)}}>{random}</button>
+      return <button className="suggestionButtons" value={random} onClick={(e) => {this._addItem(e)}}>{random}</button>
     })
 
   }
@@ -99,14 +99,17 @@ class One extends Component {
         <button className="stepsButton" onClick={this._changeScreen}><div id="steps">Back To Steps</div></button>
         <button className='previewButton' onClick={this._showPreview}>See Session Notes</button>
         <h1 className="stepMainHeading">BRAND IDENTITY</h1>
-        {!this.state.newPhrase ? <h1 className="QuestionHeading">How do you want your brand to be percieved?</h1> : <h1>{this.state.newPhrase}</h1>}
-        <button onClick={this._changeHeading} className="refreshButton"><i class="zmdi zmdi-refresh"></i></button>
-        <div>{this.renderSuggestions()}</div>
+        {!this.state.newPhrase ? <h1 className="QuestionHeading">How do you want your brand to be percieved?</h1> : <h1 className="QuestionHeading">{this.state.newPhrase}</h1>}
+        <button onClick={this._changeHeading} className="refreshButton"><i className="zmdi zmdi-refresh"></i></button>
+        <div>
+          <p className="suggestionsHeading">STUCK? ADD SOME OF THESE:</p>
+          {this.renderSuggestions()}
+        </div>
         <form onSubmit={this._handleSubmit}>
           <input type="search" className="stepsInputField" placeHolder="Start typing here & hit enter to submit" onChange={this._handleChange} value={this.state.query}/>
         </form>
         <div className="identityContainer">
-          {this.props.identity.map(i => { return <p key={this.props.identity.indexOf(i)}>{i}<button onClick={ ()=>{this._handleClick(i)} }>&times;</button></p> })}
+          {this.props.identity.map(i => { return <p className="bucketItems" key={this.props.identity.indexOf(i)}>{i}<button className="bucketItemsXIcon" onClick={ ()=>{this._handleClick(i)} }><i className="zmdi zmdi-close-circle"></i></button></p> })}
         </div>
       </div>
     );
