@@ -404,6 +404,7 @@ h1 {
   width: 100%;
   border: 60px black solid;
   z-index: 1;
+  margin-bottom: 80px;
   /* -webkit-animation: slide-up 0.4s;
   animation: slide-up 0.4s; */
 }
@@ -497,6 +498,14 @@ h1 {
   font-size: 100px;
   font-weight: 700;
   cursor: pointer;
+}
+
+#stepNavOne:hover, #stepNavTwo:hover, #stepNavThree:hover,  #stepNavFour:hover, #stepNavFive:hover {
+  font-size: 120px;
+}
+
+#stepNavOne:active, #stepNavTwo:active, #stepNavThree:active,  #stepNavFour:active, #stepNavFive:active {
+  outline: none;
 }
 
 #editContainer {
