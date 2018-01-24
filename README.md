@@ -1,3 +1,43 @@
+
+***MAGIC BEANS***
+
+Magic Beans is your essential Ideas Builder. Start a new session with Magic Beans any time you want to flesh out a new idea, define a new brand or revamp an existing one. This application is the perfect support tool for Creative Agencies running brainstorming sessions or client facing brand sessions, but it is intended to be used by anyone and everyone.
+
+Progress through 5 easy steps to better understand new ideas / your brand and come away with a PDF document of your findings and a clear path forward.
+
+Magic Beans is designed to get the user thinking creatively 'in the moment', so once a session ends (the end point dictated by the user), the session notes are saved to a PDF and erased, ready for your next idea. There's no sign up or profile creation, just jump on and grow your ideas.
+
+**HOW TO USE IT (AS A USER)**
+
+1. Click 'Start Session' to begin a new session
+2. Progress through the 5 steps, in any order, adding your own key words through the input field or click on the suggested keywords to add them to your bucket.
+3. You can add more keywords to any of the steps at any point, and also go back through steps and delete words you no longer wish to include.
+4. Click 'See Session Notes' to preview your work at anytime.
+5. Click 'Print Session Notes' from the preview page or through the 'Exit' button to download a PDF containing your session notes.
+6. To start a new session click 'Exit', 'End Session'
+
+**FUTURE Features**
+
+- Adjust step 5 to include 3 buckets 'keywords', 'descriptive', & 'wildcard' to help users think of names in three different ways
+- Find a better PDF generator and implement this
+- Add a custom domain
+
+**BUGS**
+
+- Make the question 'Randomiser' on each step always display a new question. Currently it occasionally trys to display the same Question twice, which appears to the user like the button isn't Working
+- Adjust responsive so it works seamlessly on tablet and mobile
+- Adjust CSS of bucket on all 5 steps so it doesn't clash with the bottom steps navigation on resize
+
+
+**HOW TO ADD TO THIS (as a developer)**
+
+- You will need to install the PDF generator packages: 'html2Canvas' & 'jsPDF'
+- You will need to install the npm package to autogenerate the date 'current-date'
+- You will need to install the npm package for the Session timer to work Timer from 'react.timer'
+
+
+#########################################DEFAULT REACT README############################################
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -300,7 +340,7 @@ In the WebStorm menu `Run` select `Edit Configurations...`. Then click `+` and s
 
 Start your app by running `npm start`, then press `^D` on macOS or `F9` on Windows and Linux or click the green debug icon to start debugging in WebStorm.
 
-The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine. 
+The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine.
 
 ## Formatting Code Automatically
 
@@ -1989,7 +2029,7 @@ If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to c
     RewriteRule ^ index.html [QSA,L]
 ```
 
-It will get copied to the `build` folder when you run `npm run build`. 
+It will get copied to the `build` folder when you run `npm run build`.
 
 If you’re using [Apache Tomcat](http://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
 
@@ -2418,7 +2458,7 @@ To resolve this:
 1. Open an issue on the dependency's issue tracker and ask that the package be published pre-compiled.
   * Note: Create React App can consume both CommonJS and ES modules. For Node.js compatibility, it is recommended that the main entry point is CommonJS. However, they can optionally provide an ES module entry point with the `module` field in `package.json`. Note that **even if a library provides an ES Modules version, it should still precompile other ES6 features to ES5 if it intends to support older browsers**.
 
-2. Fork the package and publish a corrected version yourself. 
+2. Fork the package and publish a corrected version yourself.
 
 3. If the dependency is small enough, copy it to your `src/` folder and treat it as application code.
 
