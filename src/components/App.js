@@ -78,7 +78,6 @@ class App extends Component {
     this._exitPopUp = this._exitPopUp.bind(this);
     this._closePopUp = this._closePopUp.bind(this);
     this._endSession = this._endSession.bind(this);
-    this._hideMsg = this._hideMsg.bind(this);
   }
 
   componentDidMount() {
@@ -100,19 +99,25 @@ class App extends Component {
   }
 
   _home() {
-    this.setState({showHome: true});
-    this.setState({closedSession: false});
+    this.setState({
+      showHome: true,
+      closedSession: false
+    });
   }
 
   _session() {
-    this.setState({showSession: true});
-    this.setState({showHome: false});
+    this.setState({
+      showSession: true,
+      showHome: false
+    });
   }
 
   _steps() {
-    this.setState({pageCount: 2});
-    this.setState({showSession: false});
-    this.setState({showHome: false});
+    this.setState({
+      pageCount: 2,
+      showSession: false,
+      showHome: false
+    });
     console.log("page count increased to 2");
   }
 
@@ -132,14 +137,16 @@ class App extends Component {
   }
 
   _firstStep() {
-    this.setState({stepOne: true});
-    this.setState({stepFive: false});
-    this.setState({stepFour: false});
-    this.setState({stepThree: false});
-    this.setState({stepTwo: false});
-    this.setState({showSession: false});
-    this.setState({showHome: false});
-    this.setState({sessionPreview: false});
+    this.setState({
+      stepOne: true,
+      stepFive: false,
+      stepFour: false,
+      stepThree: false,
+      stepTwo: false,
+      showSession: false,
+      showHome: false,
+      sessionPreview: false
+    });
     console.log("working on opening step 1");
   }
 
@@ -183,14 +190,16 @@ class App extends Component {
   }
 
   _secondStep(e) {
-    this.setState({stepTwo: true});
-    this.setState({stepFive: false});
-    this.setState({stepFour: false});
-    this.setState({stepThree: false});
-    this.setState({stepOne: false});
-    this.setState({showSession: false});
-    this.setState({showHome: false});
-    this.setState({sessionPreview: false});
+    this.setState({
+      stepTwo: true,
+      stepFive: false,
+      stepFour: false,
+      stepThree: false,
+      stepOne: false,
+      showSession: false,
+      showHome: false,
+      sessionPreview: false
+    });
     console.log("working on opening step 2");
   }
 
@@ -214,14 +223,16 @@ class App extends Component {
   }
 
   _thirdStep() {
-    this.setState({stepThree: true});
-    this.setState({stepFive: false});
-    this.setState({stepFour: false});
-    this.setState({stepTwo: false});
-    this.setState({stepOne: false});
-    this.setState({showSession: false});
-    this.setState({showHome: false});
-    this.setState({sessionPreview: false});
+    this.setState({
+      stepThree: true,
+      stepFive: false,
+      stepFour: false,
+      stepTwo: false,
+      stepOne: false,
+      showSession: false,
+      showHome: false,
+      sessionPreview: false
+    });
     console.log("working on opening step 3");
   }
 
@@ -253,14 +264,16 @@ class App extends Component {
   }
 
   _fourthStep() {
-    this.setState({stepFour: true});
-    this.setState({stepFive: false});
-    this.setState({stepThree: false});
-    this.setState({stepTwo: false});
-    this.setState({stepOne: false});
-    this.setState({showSession: false});
-    this.setState({showHome: false});
-    this.setState({sessionPreview: false});
+    this.setState({
+      stepFour: true,
+      stepFive: false,
+      stepThree: false,
+      stepTwo: false,
+      stepOne: false,
+      showSession: false,
+      showHome: false,
+      sessionPreview: false
+    });
     console.log("working on opening step 3");
   }
 
@@ -292,14 +305,16 @@ class App extends Component {
   }
 
   _fifthStep() {
-    this.setState({stepFive: true});
-    this.setState({stepFour: false});
-    this.setState({stepThree: false});
-    this.setState({stepTwo: false});
-    this.setState({stepOne: false});
-    this.setState({showSession: false});
-    this.setState({showHome: false});
-    this.setState({sessionPreview: false});
+    this.setState({
+      stepFive: true,
+      stepFour: false,
+      stepThree: false,
+      stepTwo: false,
+      stepOne: false,
+      showSession: false,
+      showHome: false,
+      sessionPreview: false
+    });
     console.log("working on opening step 5");
   }
 
@@ -331,23 +346,26 @@ class App extends Component {
   }
 
   _showPreview() {
-    this.setState({sessionPreview: true});
-    this.setState({stepFive: false});
-    this.setState({stepFour: false});
-    this.setState({stepThree: false});
-    this.setState({stepTwo: false});
-    this.setState({stepOne: false});
-    this.setState({showSession: false});
-    this.setState({pageCount: 1});
-    this.setState({showHome: false});
-    this.setState({exitPopUp: false});
+    this.setState({
+      sessionPreview: true,
+      stepFive: false,
+      stepFour: false,
+      stepThree: false,
+      stepTwo: false,
+      stepOne: false,
+      showSession: false,
+      pageCount: 1,
+      showHome: false,
+      exitPopUp: false
+    });
     console.log("opening your PDF preview");
   }
 
   _exitPopUp() {
-    this.setState({exitPopUp: true});
-    this.setState({showHome: false});
-    console.log("open exit screen");
+    this.setState({
+      exitPopUp: true,
+      showHome: false
+    });
   }
 
   _closePopUp() {
@@ -357,19 +375,14 @@ class App extends Component {
 
   _endSession() {
     localStorage.clear();
-    this.setState({showHome: false});
-    this.setState({closedSession: true});
-    this.setState({sessionPreview: false});
-    this.setState({exitPopUp: false});
-    this.setState({pageCount: 1});
-    this.setState({msg: 0});
-    }
-
-  _hideMsg() {
-    this.setState({msg: 1});
-    console.log(this.state.msg);
+    this.setState({
+      showHome: false,
+      closedSession: true,
+      sessionPreview: false,
+      exitPopUp: false,
+      pageCount: 1
+    });
   }
-
 
   render() {
     return (
@@ -391,7 +404,7 @@ class App extends Component {
 
         {this.state.stepFive ? <Five value={(e) => this._saveInput5(e)} names={this.state.names} addItem={(e) => this._saveItem5(e)} remove={(i) => this._deleteItem5(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
 
-        {this.state.sessionPreview ? <Preview identity={this.state.identity} audience={this.state.audience} tov={this.state.tov} pod={this.state.pod} names={this.state.names} backToSteps={this._showSteps} exitScreenOpen={this._exitPopUp} hideMsg={this._hideMsg} msg={this.state.msg} /> : null}
+        {this.state.sessionPreview ? <Preview identity={this.state.identity} audience={this.state.audience} tov={this.state.tov} pod={this.state.pod} names={this.state.names} backToSteps={this._showSteps} exitScreenOpen={this._exitPopUp} /> : null}
 
         {this.state.exitPopUp ? <ExitPopUp endSession={this._endSession} seeSessionNotes={this._showPreview} exitScreenClose={this._closePopUp} /> : null}
 

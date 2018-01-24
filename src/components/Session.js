@@ -1,9 +1,6 @@
 import React, { PureComponent as Component } from 'react';
 import Timer from 'react.timer';
 
-const handleFinish = function () {
-  console.log('Skynet has become self-aware!');
-}
 
 class Session extends Component {
   constructor(props) {

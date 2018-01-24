@@ -50,8 +50,6 @@ class Preview extends Component {
   }
 
 
-
-
   render() {
 
     return (
