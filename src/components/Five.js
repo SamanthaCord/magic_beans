@@ -69,7 +69,7 @@ class Five extends Component {
         <br />
         <button onClick={this._changeHeading} className="refreshButton"><i className="zmdi zmdi-refresh"></i></button>
         <div>
-          <p className="suggestionsHeading">STUCK? TRY BRAINSTORMING NAMES AND CATEGORISING THEM INTO 3 TYPES: DESCRIPTIVE, KEYWORD & WILDCARD. BE AS OUT THERE AS YOU LIKE!</p>
+          <p id="step5subHeading"><span className="stuckHead">Stuck?</span> Try thinking of words or phrases that fit into one of these 3 categories: <span className="stuckHead">DESCRIPTIVE, KEYWORD or WILDCARD.</span> Be as creative as you like!</p>
         </div>
         <form onSubmit={this._handleSubmit}>
           <input type="search" className="stepsInputField" placeholder="Type here & hit enter to submit" onChange={this._handleChange} value={this.state.query} />
