@@ -13,11 +13,19 @@ class Home extends Component {
 
   render() {
     return (
-    <div>
-        <h1>Magic Beans</h1>
-        <h2>Grow your idea</h2>
-        <button onClick={this._handleClick}>Start your session</button>
-      </div>
+    <div id="homeContainer">
+      <h1 id="siteTitle">Magic Beans</h1>
+      <h2 id="tagline">Grow your Idea.</h2>
+      <div id="bean1"></div>
+      <div id="bean2"></div>
+      <div id="bean3"></div>
+      <div id="bean4"></div>
+      <div id="bean5"></div>
+      <div id="bean6"></div>
+      <div id="bean7"></div>
+      <button id="startSessionButton" onClick={this._handleClick}>Start a session Now</button>
+        <p id="footNote">©2018 <span id="developedBy">Developed by <a href="https://github.com/SamanthaCord" target="_blank">CODA</a></span></p>
+    </div>
     );
   }
 }

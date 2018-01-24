@@ -923,3 +923,187 @@ i.zmdi.zmdi-close-circle {
   border: none;
   border-bottom: 5px solid #e3e3e3;
 }
+
+/*////////////////////////////HOME PAGE///////////////////////////////*/
+
+#homeContainer {
+  background-color: #190bec;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#siteTitle {
+  font-size: 20px;
+  color: white;
+  margin-top: 20px;
+}
+
+#tagline {
+  font-size: 100px;
+  color: white;
+  margin: 0 auto;
+  position: relative;
+  z-index: 99;
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
+#bean1, #bean2, #bean3, #bean4, #bean5, #bean6, #bean7 {
+  display: inline-block;
+  width: 210px;
+  height: 250px;
+  border-radius: 100%;
+  overflow: hidden;
+	box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+	transform: translatey(0px);
+	animation: float 10s ease-in-out infinite;
+  z-index: -1;
+}
+
+#bean1 {
+  background-color: #ff0018;
+  left: 10%;
+  top: 10%;
+}
+
+
+#bean2 {
+  background-color: #ffeb3b;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+}
+
+#bean3 {
+  background-color: green;
+  position: absolute;
+  right: 10%;
+  top: 10%;
+}
+
+#bean4 {
+  background-color: green;
+  position: absolute;
+  left: 5%;
+  top: 45%;
+}
+
+#bean5 {
+  background-color: #ff0018;
+  position: absolute;
+  right: 20%;
+  top: 60%;
+}
+
+#bean6 {
+  background-color: #ffeb3b;
+  position: absolute;
+  right: -10%;
+  top: 50%;
+}
+
+#bean7 {
+  background-color: #ffeb3b;
+  position: absolute;
+  left: 11%;
+  top: 10%;
+}
+
+#startSessionButton {
+    border: none;
+    background-color: blue;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    right: 15%;
+    margin-top: 100px;
+    width: 40em;
+    min-height: 100px;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 99;
+}
+
+#startSessionButton:hover {
+  background-color: white;
+  color: blue;
+}
+
+#startSessionButton:active, #startSessionButton:focus {
+  outline: none;
+}
+
+#footNote {
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  color: white;
+}
+
+#developedBy {
+  padding-left: 10px;
+}
+
+a {
+  color: white;
+}
+
+a:hover, a:active, a:focus {
+  color: white;
+}
+
+@media (max-width:480px) {
+    #bean1, #bean2, #bean3, #bean4, #bean5, #bean6, #bean7 {
+      width: 90px;
+      height: 110px;
+    }
+    #startSessionButton {
+      max-width: 70%;
+      margin-top: 60px;
+    }
+}
+
+@media (max-width:600px) {
+    #bean1, #bean2, #bean3, #bean4, #bean5, #bean6, #bean7 {
+      width: 110px;
+      height: 130px;
+    }
+    #startSessionButton {
+      max-width: 70%;
+      margin-top: 60px;
+    }
+}
+
+@media (max-width:900px) {
+    #bean1, #bean2, #bean3, #bean4, #bean5, #bean6, #bean7 {
+      width: 190px;
+      height: 220px;
+    }
+    #startSessionButton {
+      max-width: 70%;
+      margin-top: 60px;
+    }
+}
