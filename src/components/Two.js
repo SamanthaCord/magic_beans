@@ -107,7 +107,7 @@ class Two extends Component {
           {this.randomise()}
         </div>
         <form onSubmit={this._handleSubmit}>
-          <input type="search" className="stepsInputField" placeHolder="Start typing here & hit enter to submit" onChange={this._handleChange} value={this.state.query} />
+          <input type="search" className="stepsInputField" placeholder="Start typing here & hit enter to submit" onChange={this._handleChange} value={this.state.query} />
         </form>
         <div className="audienceContainer">
           {this.props.audience.map(i => {

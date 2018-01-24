@@ -106,7 +106,7 @@ class One extends Component {
           {this.randomise()}
         </div>
         <form onSubmit={this._handleSubmit}>
-          <input type="search" className="stepsInputField" placeHolder="Start typing here & hit enter to submit" onChange={this._handleChange} value={this.state.query}/>
+          <input type="search" className="stepsInputField" placeholder="Start typing here & hit enter to submit" onChange={this._handleChange} value={this.state.query}/>
         </form>
         <div className="identityContainer">
           {this.props.identity.map(i => { return <p className="bucketItems" key={this.props.identity.indexOf(i)}>{i}<button className="bucketItemsXIcon" onClick={ ()=>{this._handleClick(i)} }><i className="zmdi zmdi-close-circle"></i></button></p> })}
