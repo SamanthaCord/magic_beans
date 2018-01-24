@@ -14,6 +14,8 @@ body {
   text-align: center;
 }
 
+/*BORDER BUTTONS & LOGO ONCE SESSION IS GOING*/
+
 #logo {
   width: 60px;
   height: 57px;
@@ -74,6 +76,8 @@ body {
   cursor: pointer;
 }
 
+/*BACK TO STEPS BLUE BUTTON*/
+
 #steps {
   z-index: 99;
   position: fixed;
@@ -109,6 +113,8 @@ body {
   cursor: pointer;
 }
 
+/*MAIN STEPS PAGE*/
+
 #wrapper {
   width: 100%;
   height: 100%;
@@ -138,6 +144,8 @@ body {
      margin-right: 0%;
    }
  }
+
+/*SEE SESSION NOTES RED BUTTON*/
 
 .previewButton {
   z-index: 99;
@@ -169,6 +177,8 @@ body {
 .previewButton:active, .previewButton:focus {
   outline: none;
 }
+
+/*5 STEP PANELS - MAIN STEP PAGE*/
 
 #buttonContainer {
   width: 100%;
@@ -287,7 +297,9 @@ body {
   outline: none;
 }
 
-/*//////////////////STEP 1//////////////////////*/
+/*//////////////////STEP 1 PAGE//////////////////////*/
+
+/* SEE 5 STEPS PAGES- MAIN STYLING FIRST!! */
 
 #stepOneContainer {
   background-color: white;
@@ -300,6 +312,8 @@ body {
   animation: slide-left 0.3s;
   margin-top:0%;
 }
+
+/* KEYFRAME FOR ALL 5 STEPS SLIDE IN */
 
 @keyframes slide-left {
   from {
@@ -342,7 +356,9 @@ h1 {
   margin-bottom: 80px;
 }
 
-/*//////////////////STEP 2//////////////////////*/
+/*//////////////////STEP 2 PAGE//////////////////////*/
+
+/* SEE 5 STEPS PAGES- MAIN STYLING FIRST!! */
 
 #stepTwoContainer {
   background-color: white;
@@ -364,7 +380,9 @@ h1 {
   margin-bottom: 80px;
 }
 
-/*//////////////////STEP 3//////////////////////*/
+/*//////////////////STEP 3 PAGE//////////////////////*/
+
+/* SEE 5 STEPS PAGES- MAIN STYLING FIRST!! */
 
 #stepThreeContainer {
   background-color: white;
@@ -386,7 +404,9 @@ h1 {
   margin-bottom: 80px;
 }
 
-/*//////////////////STEP 4//////////////////////*/
+/*//////////////////STEP 4 PAGE//////////////////////*/
+
+/* SEE 5 STEPS PAGES- MAIN STYLING FIRST!! */
 
 #stepFourContainer {
   background-color: white;
@@ -408,7 +428,9 @@ h1 {
   margin-bottom: 80px;
 }
 
-/*//////////////////STEP 5//////////////////////*/
+/*//////////////////STEP 5 PAGE//////////////////////*/
+
+/* SEE 5 STEPS PAGES- MAIN STYLING FIRST!! */
 
 #stepFiveContainer {
   background-color: white;
@@ -431,7 +453,7 @@ h1 {
 }
 
 
-/*//////////////////////STEP NAVIGATION//////////////////////////*/
+/*//////////////////////STEPS SUB NAVIGATION//////////////////////////*/
 
 .navigationButtons {
   color: white;
@@ -569,7 +591,7 @@ h1 {
   padding-top: 60px;
 }
 
-/*///////////////////////////5 STEPS MAIN STYLING///////////////////////////*/
+/*//////////////////////////5 STEPS PAGES- MAIN STYLING//////////////////////////*/
 
 .stepMainHeading{
   color: black;
@@ -812,7 +834,7 @@ i.zmdi.zmdi-close-circle {
   padding-right: 1em;
 }
 
-/*//////////////////PREVIEW CONTAINER//////////////////////*/
+/*//////////////////SEE SESSION NOTES PAGE//////////////////////*/
 
 #previewContainer {
   background-color: white;
@@ -864,7 +886,7 @@ i.zmdi.zmdi-close-circle {
    outline: none;
  }
 
-/*////////////////////////PDF DocStyling/////////////////////////////*/
+/*////////////////////////PDF DOC STYLING/////////////////////////////*/
 
 .docHeading {
   color: black;
@@ -883,6 +905,7 @@ i.zmdi.zmdi-close-circle {
   margin-top: 30px;
   margin-bottom: 60px;
 }
+
 
 #sessionNameContainer {
   width: 100%;
