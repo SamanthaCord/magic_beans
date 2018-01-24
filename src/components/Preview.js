@@ -5,16 +5,9 @@ import html2canvas from 'html2canvas';
 class Preview extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      defaultMessage: "Your session awaits! Keep adding keywords to explore your new idea and / or brand. Is that a spring in your step? Yes! We knew you could do it! Go! Thrill, Excite & Inspire! We believe in you!! ... Too much? Sorry about that.",
-      msg: 0
-    }
+
     this._changeScreen = this._changeScreen.bind(this);
     this._exitPopUp = this._exitPopUp.bind(this);
-  }
-
-  componentDidMount() {
-    setTimeout(this.props.hideMsg, 6000)
   }
 
   _changeScreen() {
@@ -27,7 +20,7 @@ class Preview extends Component {
     const imgData = canvas.toDataURL('image/png');
     const pdf = new jsPDF();
     pdf.addImage(imgData, 'JPEG', 10, 10, 180, 120);
-    pdf.save("Brand_Session.pdf");
+    pdf.save("My_Brand_Session.pdf");
   });
   }
 
@@ -43,23 +36,29 @@ class Preview extends Component {
         } /></button>
         <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
         <button className="stepsButton" onClick={this._changeScreen}><div id="steps">Back To Steps</div></button>
-        <h1>Preview</h1>
+        <h1 className="previewMainHeading">Here lies your handy work</h1>
+        <h1 className="previewSubHeading">ADD KEYWORDS TO A PREVIOUS STEP AT ANY TIME</h1>
         <div className="mb5">
-          <button onClick={this.printDocument}>Print Session Notes</button>
+          <button id="previewPrintSessionButton" onClick={this.printDocument}>Print Session Notes <i class="zmdi zmdi-download"></i></button>
         </div>
         <div id="divToPrint" className="mt4" style={{
-          "backgroundColor": '#e3e3e3',
+          "backgroundColor": '#ffffff',
+          "border": '10px solid black',
           "color": "black",
-          "width": '210mm',
+          "max-width": '210mm',
           "minHeight": '50mm',
-          "padding": '50px',
+          "padding": '20px',
           "marginLeft": 'auto',
           "marginRight": 'auto',
-          "fontFamily": 'Montserrat'
+          "fontFamily": 'Montserrat',
+          "fontSize": '20px'
         }}>
-          <div>{this.props.msg === 0 ? this.state.defaultMessage : null}</div>
-          <br />
-          <div><h3>Brand Identity</h3>{this.props.identity.join(', ')}</div>
+
+        <div>
+          <h1 className="docHeading">Magic Beans</h1>
+          <h1 className="docSubHeadings">Brand Session Date:</h1>
+          <h1 className="docSubHeadings">Working Title: </h1>
+          <h3>Brand Identity</h3>{this.props.identity.join(', ')}</div>
           <br />
           <div><h3>Audience</h3>{this.props.audience.join(', ')}</div>
           <br />

@@ -27,7 +27,7 @@ class ExitPopUp extends Component {
       <div>
       <div id="exitContainer">
           <button id="XiconButton" onClick={this._exitPopUpClose}><h1 className="Xicon">&times;</h1></button>
-          <h1 className="QuestionHeading">Ideas are down, brains are tired, lets get outta here! <br />
+          <h1 className="MainExitText">Ideas are down, brains are tired, lets get outta here! <br />
           <br />
           Click 'Print Session' to save a PDF of your notes. <br /> <br /> Click 'End Session' to exit or begin a new session.</h1>
 

@@ -430,41 +430,6 @@ h1 {
   margin-bottom: 80px;
 }
 
-/*//////////////////PREVIEW CONTAINER//////////////////////*/
-
-#previewContainer {
-  background-color: white;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  border: 60px black solid;
-  z-index: 1;
-  margin-bottom: 80px;
-  /* -webkit-animation: slide-up 0.4s;
-  animation: slide-up 0.4s; */
-}
-
-/* @keyframes slide-up {
-  from {
-    margin-top: 100%;
-  }
-
-  to {
-    margin-top: 0%;
-  }
-}
-
- @-webkit-keyframes slide-up {
-   from {
-     margin-top: 100%;
-   }
-
-   to {
-     margin-top: 0%;
-   }
- } */
-
-
 
 /*//////////////////////STEP NAVIGATION//////////////////////////*/
 
@@ -594,7 +559,7 @@ h1 {
 }
 
 #symbol {
-  color: #007EF6;
+  color: white;
   font-size: 35px;
   font-weight: 600;
   padding-top: 60px;
@@ -759,7 +724,20 @@ i.zmdi.zmdi-close-circle {
   cursor: pointer;
 }
 
-/*using css from '5 STEPS MAIN STYLING' for main text styling*/
+.MainExitText {
+  color: black;
+  font-size: 40px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+
+@media (max-width:480px) {
+    .MainExitText {
+        font-size:26px;
+    }
+}
 
 #printSessionButton, #endButton {
   border: none;
@@ -803,4 +781,97 @@ i.zmdi.zmdi-close-circle {
   margin-bottom: 10px;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+/*//////////////////PREVIEW CONTAINER//////////////////////*/
+
+#previewContainer {
+  background-color: white;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 60px black solid;
+  z-index: 1;
+  margin-bottom: 80px;
+  /* -webkit-animation: slide-up 0.4s;
+  animation: slide-up 0.4s; */
+}
+
+/* @keyframes slide-up {
+  from {
+    margin-top: 100%;
+  }
+
+  to {
+    margin-top: 0%;
+  }
+}
+
+ @-webkit-keyframes slide-up {
+   from {
+     margin-top: 100%;
+   }
+
+   to {
+     margin-top: 0%;
+   }
+ } */
+
+ .previewMainHeading {
+   color: black;
+   font-size: 40px;
+   display: inline-block;
+   margin-top: 60px;
+   margin-right: 30px;
+   margin-bottom: 0;
+ }
+
+ .previewSubHeading {
+    color: black;
+    font-size: 12px;
+    margin-top: 12px;
+ }
+
+ #previewPrintSessionButton {
+   border: none;
+   background-color: blue;
+   font-size: 20px;
+   font-weight: 600;
+   color: white;
+   padding: 10px;
+   margin-top: 10px;
+   margin-bottom: 50px;
+   min-width: 150px;
+   max-width: 250px;
+   min-height: 100px;
+   text-transform: uppercase;
+   cursor: pointer;
+ }
+
+ #previewPrintSessionButton:hover {
+   border: 5px solid #ff0018;
+ }
+
+ #previewPrintSessionButton:active, #previewPrintSessionButton:hover {
+   outline: none;
+ }
+
+/*////////////////////////PDF DocStyling/////////////////////////////*/
+
+.docHeading {
+  color: black;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.docSubHeadings {
+  display: inline-block;
+  color: black;
+  font-size: 13px;
+  line-height: 1.4;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 60px;
 }

@@ -405,8 +405,6 @@ class App extends Component {
 
         {this.state.stepFive ? <StepsNav showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} /> : null}
 
-        {this.state.sessionPreview ? <StepsNav showOne={() => this._firstStep()} showTwo={() => this._secondStep()} showThree={() => this._thirdStep()} showFour={() => this._fourthStep()} showFive={() => this._fifthStep()} /> : null}
-
         {this.state.closedSession ? <SessionClosed close={() => this._home()} /> : null}
 
       </div>
