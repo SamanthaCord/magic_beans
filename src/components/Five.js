@@ -5,8 +5,6 @@ class Five extends Component {
     super(props);
     this.state = {
       query: '',
-      suggestions: ["female", "30s - 50s", "mums", "males", "early adopters", "young people", "social media users", "corporate", "creative", "cool"],
-      randoms: [],
       questionAlts: ["Have you thought of a name?", "What keywords best describe your idea?", "Creatively describe your idea / brand?"],
       newPhrase: ''
     }
@@ -20,17 +18,6 @@ class Five extends Component {
 
   _changeScreen() {
     this.props.backToSteps()
-  }
-
-  componentDidMount(){
-    let randomSuggest = this.state.suggestions.slice();
-    this.setState({randoms: [
-       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1),
-       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1),
-       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1),
-       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1),
-       randomSuggest.splice(Math.floor(Math.random()*randomSuggest.length),1)
-    ]})
   }
 
   _changeHeading() {
@@ -60,24 +47,6 @@ class Five extends Component {
     this.props.remove(i)
   }
 
-  _addItem(e) {
-    this.props.addItem(e.target.value);
-  }
-
-  randomise() {
-    let randomSuggest = this.state.suggestions.slice();
-
-    return (
-      <div>
-        <button className="suggestionButtons" value={this.state.randoms[0]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[0]}</button>
-        <button className="suggestionButtons" value={this.state.randoms[1]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[1]}</button>
-        <button className="suggestionButtons" value={this.state.randoms[2]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[2]}</button>
-        <button className="suggestionButtons" value={this.state.randoms[3]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[3]}</button>
-        <button className="suggestionButtons" value={this.state.randoms[4]} onClick={(e) => {this._addItem(e)}}>{this.state.randoms[4]}</button>
-      </div>
-    )
-  }
-
   _showPreview() {
     this.props.showPreview()
   }
@@ -100,11 +69,10 @@ class Five extends Component {
         <br />
         <button onClick={this._changeHeading} className="refreshButton"><i className="zmdi zmdi-refresh"></i></button>
         <div>
-          <p className="suggestionsHeading">STUCK? ADD SOME OF THESE:</p>
-          {this.randomise()}
+          <p className="suggestionsHeading">STUCK? TRY BRAINSTORMING NAMES AND CATEGORISING THEM INTO 3 TYPES: DESCRIPTIVE, KEYWORD & WILDCARD. BE AS OUT THERE AS YOU LIKE!</p>
         </div>
         <form onSubmit={this._handleSubmit}>
-          <input type="search" className="stepsInputField" placeholder="Start typing here & hit enter to submit" onChange={this._handleChange} value={this.state.query} />
+          <input type="search" className="stepsInputField" placeholder="Type here & hit enter to submit" onChange={this._handleChange} value={this.state.query} />
         </form>
         <div className="namingContainer">
           {this.props.names.map(i => {

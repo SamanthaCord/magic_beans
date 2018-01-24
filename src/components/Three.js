@@ -5,9 +5,9 @@ class Three extends Component {
     super(props);
     this.state = {
       query: '',
-      suggestions: ["premium", "approachable", "innovative", "bold", "creative", "fashion", "ecommerce", "engaging", "straight forward", "cool"],
+      suggestions: ["Conversational", "Approachable", "Professional", "Friendly", "Creative", "Confident", "Not pushy", "Engaging", "Straight forward", "Cool", "Educated", "Effortless", "Quirky", "Relatable", "Trusting", "Prompt", "Considered", "Consistent"],
       randoms: [],
-      questionAlts: ["How will you communicate?", "How does your brand talk?", "What is your TOV?"],
+      questionAlts: ["How will you communicate?", "What language will you use?", "What is your TOV?", "How will your staff act?"],
       newPhrase: ''
     }
     this._changeHeading = this._changeHeading.bind(this);
@@ -103,7 +103,7 @@ class Three extends Component {
           {this.randomise()}
         </div>
         <form onSubmit={this._handleSubmit}>
-          <input type="search" className="stepsInputField" placeholder="Start typing here & hit enter to submit" onChange={this._handleChange} value={this.state.query} />
+          <input type="search" className="stepsInputField" placeholder="Type here & hit enter to submit" onChange={this._handleChange} value={this.state.query} />
         </form>
         <div className="tovContainer">
           {this.props.tov.map(i => {

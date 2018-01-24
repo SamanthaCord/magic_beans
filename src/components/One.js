@@ -5,9 +5,9 @@ class One extends Component {
     super(props);
     this.state = {
       query: '',
-      suggestions: ["premium", "approachable", "innovative", "bold", "creative", "fashion", "ecommerce", "engaging", "straight forward", "cool"],
+      suggestions: ["Premium", "Approachable", "Innovative", "Bold", "Creative", "Fashion", "Ecommerce", "Engaging", "Straight forward", "Cool", "Modern", "Corporate", "Unique", "Service", "Quality", "Wellness", "Hospitality", "Tailored", "Caring", "Organised", "Established", "Trustworthy", "Trade", "Online", "Empowering", "Accessible"],
       randoms: [],
-      questionAlts: ["what is your product / idea?", "what are your strengths?", "what is your business / idea about?"],
+      questionAlts: ["What is your product / idea?", "What is your elevator pitch?", "Describe your idea in keywords?"],
       newPhrase: ''
     }
     this._handleSubmit = this._handleSubmit.bind(this);
@@ -104,7 +104,7 @@ class One extends Component {
           {this.randomise()}
         </div>
         <form onSubmit={this._handleSubmit}>
-          <input type="search" className="stepsInputField" placeholder="Start typing here & hit enter to submit" onChange={this._handleChange} value={this.state.query}/>
+          <input type="search" className="stepsInputField" placeholder="Type here & hit enter to submit" onChange={this._handleChange} value={this.state.query}/>
         </form>
         <div className="identityContainer">
           {this.props.identity.map(i => { return <p className="bucketItems" key={this.props.identity.indexOf(i)}>{i}<button className="bucketItemsXIcon" onClick={ ()=>{this._handleClick(i)} }><i className="zmdi zmdi-close-circle"></i></button></p> })}

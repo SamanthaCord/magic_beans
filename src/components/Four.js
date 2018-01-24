@@ -5,7 +5,7 @@ class Four extends Component {
     super(props);
     this.state = {
       query: '',
-      suggestions: ["innovative", "approachable", "ease of use", "creative", "variety", "bold", "price point"],
+      suggestions: ["innovative", "approachable", "ease of use", "quality", "longevity", "bold", "price point", "connected", "efficiency", "team", "experience", "value", "unique", "product", "service" ],
       randoms: [],
       questionAlts: ["What is your niche?", "What sets your brand / idea apart?", "What are your main strengths?"],
       newPhrase: ''
@@ -104,7 +104,7 @@ class Four extends Component {
           {this.randomise()}
         </div>
         <form onSubmit={this._handleSubmit}>
-          <input type="search" className="stepsInputField" placeholder="Start typing here & hit enter to submit" onChange={this._handleChange} value={this.state.query} />
+          <input type="search" className="stepsInputField" placeholder="Type here & hit enter to submit" onChange={this._handleChange} value={this.state.query} />
         </form>
         <div className="podContainer">
           {this.props.pod.map(i => {

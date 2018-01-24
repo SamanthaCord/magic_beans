@@ -441,6 +441,7 @@ h1 {
   height: 20%;
   bottom: 60px;
   padding: 0;
+  margin-top: 80px;
 }
 
 #stepNavOne, #stepNavThree, #stepNavFive {
@@ -632,7 +633,7 @@ i.zmdi.zmdi-plus-circle {
 
 .stepsInputField {
   margin: 40px;
-  width: 22%;
+  min-width: 40%;
   padding-bottom: 6px;
   border: none;
   border-bottom: 5px solid #e3e3e3;
@@ -645,6 +646,18 @@ i.zmdi.zmdi-plus-circle {
   border: none;
   border-bottom: 5px solid #e3e3e3;
 }
+
+@media (max-width:480px) {
+    .stepsInputField {
+        display: block;
+        margin: 0 auto;
+        min-width: 220px;
+        font-size: 12px;
+        margin-top: 30px;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+  }
 
 .bucketItems {
   display: inline-block;

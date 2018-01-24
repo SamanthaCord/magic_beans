@@ -5,7 +5,7 @@ class Two extends Component {
     super(props);
     this.state = {
       query: '',
-      suggestions: ["female", "30s - 50s", "mums", "males", "early adopters", "young people", "social media users", "corporate", "creative", "cool"],
+      suggestions: ["Females", "30 - 50s bracket", "Mums", "Males", "Early adopters", "Young people", "Social media users", "Corporate", "Creatives", "Other businesses", "Extroverts", "Those with disposable income", "Australians", "International", "People favoring Quality"],
       randoms: [],
       questionAlts: ["Who do you want to engage with?", "What type of people would like this?", "Who is your primary and secondary audience?"],
       newPhrase: ''
@@ -104,7 +104,7 @@ class Two extends Component {
           {this.randomise()}
         </div>
         <form onSubmit={this._handleSubmit}>
-          <input type="search" className="stepsInputField" placeholder="Start typing here & hit enter to submit" onChange={this._handleChange} value={this.state.query} />
+          <input type="search" className="stepsInputField" placeholder="Type here & hit enter to submit" onChange={this._handleChange} value={this.state.query} />
         </form>
         <div className="audienceContainer">
           {this.props.audience.map(i => {
