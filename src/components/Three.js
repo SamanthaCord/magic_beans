@@ -10,13 +10,10 @@ class Three extends Component {
       questionAlts: ["How will you communicate?", "How does your brand talk?", "What is your TOV?"],
       newPhrase: ''
     }
-    this._changeScreen = this._changeScreen.bind(this);
     this._changeHeading = this._changeHeading.bind(this);
-    this._handleSubmit = this._handleSubmit.bind(this);
+    this._changeScreen = this._changeScreen.bind(this);
     this._handleChange = this._handleChange.bind(this);
-    this._handleClick = this._handleClick.bind(this);
-    this.randomise = this.randomise.bind(this);
-    this._addItem = this._addItem.bind(this);
+    this._handleSubmit = this._handleSubmit.bind(this);
     this._showPreview = this._showPreview.bind(this);
     this._exitPopUp = this._exitPopUp.bind(this);
   }

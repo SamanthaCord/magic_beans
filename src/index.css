@@ -503,6 +503,10 @@ h1 {
   outline: none;
 }
 
+#stepNavOne:focus, #stepNavTwo:focus, #stepNavThree:focus,  #stepNavFour:focus, #stepNavFive:focus {
+  outline: none;
+}
+
 
 /*///////////////////////////START SESSION PAGE//////////////////////////////*/
 

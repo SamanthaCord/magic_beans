@@ -10,12 +10,10 @@ class One extends Component {
       questionAlts: ["what is your product / idea?", "what are your strengths?", "what is your business / idea about?"],
       newPhrase: ''
     }
-    this._changeScreen = this._changeScreen.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleChange = this._handleChange.bind(this);
-    this._handleClick = this._handleClick.bind(this);
-    this._addItem = this._addItem.bind(this);
     this._changeHeading = this._changeHeading.bind(this);
+    this._changeScreen = this._changeScreen.bind(this);
     this._showPreview = this._showPreview.bind(this);
     this._exitPopUp = this._exitPopUp.bind(this);
   }

@@ -44,20 +44,7 @@ class App extends Component {
       closedSession: false
     };
 
-    this._session = this._session.bind(this);
-    this._steps = this._steps.bind(this);
     this._showSteps = this._showSteps.bind(this);
-
-    this._firstStep = this._firstStep.bind(this);
-
-    this._saveItem = this._saveItem.bind(this);
-    this._deleteItem = this._deleteItem.bind(this);
-
-    this._secondStep = this._secondStep.bind(this);
-    this._thirdStep = this._thirdStep.bind(this);
-    this._fourthStep = this._fourthStep.bind(this);
-    this._fifthStep = this._fifthStep.bind(this);
-
     this._showPreview = this._showPreview.bind(this);
     this._exitPopUp = this._exitPopUp.bind(this);
     this._closePopUp = this._closePopUp.bind(this);

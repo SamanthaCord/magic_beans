@@ -10,13 +10,10 @@ class Two extends Component {
       questionAlts: ["Who do you want to engage with?", "What type of people would like this?", "Who is your primary and secondary audience?"],
       newPhrase: ''
     }
-    this._changeScreen = this._changeScreen.bind(this);
     this._changeHeading = this._changeHeading.bind(this);
+    this._changeScreen = this._changeScreen.bind(this);
     this._handleChange = this._handleChange.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
-    this._handleClick = this._handleClick.bind(this);
-    this.randomise = this.randomise.bind(this);
-    this._addItem = this._addItem.bind(this);
     this._showPreview = this._showPreview.bind(this);
     this._exitPopUp = this._exitPopUp.bind(this);
   }
