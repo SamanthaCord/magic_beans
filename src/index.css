@@ -790,7 +790,7 @@ i.zmdi.zmdi-close-circle {
   position: absolute;
   height: 100%;
   width: 100%;
-  border: 60px black solid;
+  border-top: 60px black solid;
   z-index: 1;
   margin-bottom: 80px;
   /* -webkit-animation: slide-up 0.4s;
@@ -828,8 +828,9 @@ i.zmdi.zmdi-close-circle {
 
  .previewSubHeading {
     color: black;
-    font-size: 12px;
+    font-size: 20px;
     margin-top: 12px;
+    font-weight: 300;
  }
 
  #previewPrintSessionButton {
@@ -852,7 +853,7 @@ i.zmdi.zmdi-close-circle {
    border: 5px solid #ff0018;
  }
 
- #previewPrintSessionButton:active, #previewPrintSessionButton:hover {
+ #previewPrintSessionButton:active, #previewPrintSessionButton:focus {
    outline: none;
  }
 
@@ -860,12 +861,43 @@ i.zmdi.zmdi-close-circle {
 
 .docHeading {
   color: black;
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 600;
   margin-bottom: 0;
 }
 
 .docSubHeadings {
+  display: inline-block;
+  color: black;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+#sessionNameContainer {
+  width: 100%;
+}
+
+@media (max-width:480px) {
+    .sessionNameInputField {
+        display: block;
+        margin: 0 auto;
+        min-width: 250px;
+        margin-top: 5px;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+    #sessionNameHeading {
+      display: block;
+      margin-bottom: 0;
+      padding: 0;
+    }
+}
+
+#sessionNameHeading {
   display: inline-block;
   color: black;
   font-size: 13px;
@@ -874,4 +906,20 @@ i.zmdi.zmdi-close-circle {
   text-transform: uppercase;
   margin-top: 30px;
   margin-bottom: 60px;
+  padding: 0;
+}
+
+.sessionNameInputField {
+  width: 22%;
+  padding-bottom: 6px;
+  border: none;
+  border-bottom: 5px solid #e3e3e3;
+  font-size: 15px;
+  text-align: left;
+}
+
+.sessionNameInputField:active, .sessionNameInputField:focus, .sessionNameInputField:hover {
+  outline: none;
+  border: none;
+  border-bottom: 5px solid #e3e3e3;
 }
