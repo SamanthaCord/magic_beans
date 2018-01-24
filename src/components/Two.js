@@ -92,7 +92,7 @@ class Two extends Component {
   render() {
     return (
       <div id="stepTwoContainer">
-        <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4770/39797943482_e083e15fe2.jpg'
+        <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4622/25996885548_9d35610eb9.jpg'
         } /></button>
         <h1 className="MainHeading">Magic Beans</h1>
         <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>

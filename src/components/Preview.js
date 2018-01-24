@@ -54,7 +54,7 @@ class Preview extends Component {
 
     return (
       <div id="previewContainer">
-        <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4705/39067048194_d84d9a9542.jpg'
+        <button className='logobutton' onClick={this._changeScreen}><img id="logo" src={'https://farm5.staticflickr.com/4622/25996885548_9d35610eb9.jpg'
         } /></button>
         <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
         <button className="stepsButton" onClick={this._changeScreen}><div id="steps">Back To Steps</div></button>
