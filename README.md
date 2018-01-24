@@ -14,17 +14,17 @@ Magic Beans is designed to get the user thinking creatively 'in the moment', so 
 3. You can add more keywords to any of the steps at any point, and also go back through steps and delete words you no longer wish to include.
 4. Click 'See Session Notes' to preview your work at anytime.
 5. Click 'Print Session Notes' from the preview page or through the 'Exit' button to download a PDF containing your session notes.
-6. To start a new session click 'Exit', 'End Session'
+6. To start a new session click 'Exit', followed by 'End Session'
 
 **FUTURE Features**
 
-- Adjust step 5 to include 3 buckets 'keywords', 'descriptive', & 'wildcard' to help users think of names in three different ways
+- Adjust step 5 to include 3 buckets titled: 'keywords', 'descriptive', & 'wildcard' to help users think of names in three different ways
 - Find a better PDF generator and implement this
 - Add a custom domain
 
 **BUGS**
 
-- Make the question 'Randomiser' on each step always display a new question. Currently it occasionally trys to display the same Question twice, which appears to the user like the button isn't Working
+- Make the question 'Randomiser' on each step always display a new question. Currently it occasionally tries to display the same Question twice, which appears to the user like the button isn't Working
 - Adjust responsive so it works seamlessly on tablet and mobile
 - Adjust CSS of bucket on all 5 steps so it doesn't clash with the bottom steps navigation on resize
 
@@ -33,7 +33,7 @@ Magic Beans is designed to get the user thinking creatively 'in the moment', so 
 
 - You will need to install the PDF generator packages: 'html2Canvas' & 'jsPDF'
 - You will need to install the npm package to autogenerate the date 'current-date'
-- You will need to install the npm package for the Session timer to work Timer from 'react.timer'
+- You will need to install the npm package for the Session timer to work: Timer from 'react.timer'
 
 
 #########################################DEFAULT REACT README############################################

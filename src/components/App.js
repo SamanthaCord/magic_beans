@@ -242,7 +242,12 @@ class App extends Component {
       stepTwo: false,
       stepOne: false,
       exitPopUp: false,
-      pageCount: 1
+      pageCount: 1,
+      identity: [],
+      audience: [],
+      tov: [],
+      pod: [],
+      names: []
     });
   }
 
