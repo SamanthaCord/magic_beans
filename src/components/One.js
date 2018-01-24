@@ -39,7 +39,7 @@ class One extends Component {
     e.preventDefault();
     const query = this.state.query;
     // console.log(query);
-    this.props.value(query)
+    this.props.addItem(query)
     this.setState({
       query: ''
     });

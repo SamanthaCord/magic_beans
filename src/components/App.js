@@ -51,28 +51,19 @@ class App extends Component {
 
     this._firstStep = this._firstStep.bind(this);
     this._saveItem = this._saveItem.bind(this);
-    this._saveInput = this._saveInput.bind(this);
     this._deleteItem = this._deleteItem.bind(this);
 
-    this._saveInput2 = this._saveInput2.bind(this);
     this._secondStep = this._secondStep.bind(this);
-    this._saveItem2 = this._saveItem2.bind(this);
     this._deleteItem2 = this._deleteItem2.bind(this);
 
     this._thirdStep = this._thirdStep.bind(this);
-    this._saveInput3 = this._saveInput3.bind(this);
     this._deleteItem3 = this._deleteItem3.bind(this);
-    this._saveItem3 = this._saveItem3.bind(this);
 
     this._fourthStep = this._fourthStep.bind(this);
-    this._saveInput4 = this._saveInput4.bind(this);
     this._deleteItem4 = this._deleteItem4.bind(this);
-    this._saveItem4 = this._saveItem4.bind(this);
 
     this._fifthStep = this._fifthStep.bind(this);
-    this._saveInput5 = this._saveInput5.bind(this);
     this._deleteItem5 = this._deleteItem5.bind(this);
-    this._saveItem5 = this._saveItem5.bind(this);
 
     this._showPreview = this._showPreview.bind(this);
     this._exitPopUp = this._exitPopUp.bind(this);
@@ -150,24 +141,6 @@ class App extends Component {
     console.log("working on opening step 1");
   }
 
-  _saveInput(e) {
-    const update = this.state.identity.slice()
-    this.setState({identity: [...update, e]}, function() {
-      localStorage['stepone'] = JSON.stringify(this.state.identity);
-    })
-    console.log(e);
-  }
-
-  _deleteItem(i) {
-    const update = this.state.identity.slice()
-    update.splice( this.state.identity.indexOf(i), 1 )
-    this.setState({
-      identity: update
-    }, function() {
-      localStorage['stepone'] = JSON.stringify(this.state.identity);
-    })
-  }
-
   _saveItem(item, step) {
     const keys = steps[step]
     const { storageKey, stateKey } = keys
@@ -181,12 +154,14 @@ class App extends Component {
     console.log(item);
   }
 
-  _saveInput2(e) {
-    const update = this.state.audience.slice()
-    this.setState({audience: [...update, e]}, function() {
-      localStorage['steptwo'] = JSON.stringify(this.state.audience);
+  _deleteItem(i) {
+    const update = this.state.identity.slice()
+    update.splice( this.state.identity.indexOf(i), 1 )
+    this.setState({
+      identity: update
+    }, function() {
+      localStorage['stepone'] = JSON.stringify(this.state.identity);
     })
-    console.log(e);
   }
 
   _secondStep(e) {
@@ -201,15 +176,6 @@ class App extends Component {
       sessionPreview: false
     });
     console.log("working on opening step 2");
-  }
-
-  _saveItem2(e) {
-    const update = this.state.audience.slice()
-
-    this.setState({audience: [...update, e]}, function() {
-      localStorage['steptwo'] = JSON.stringify(this.state.audience);
-    })
-    console.log(e);
   }
 
   _deleteItem2(i) {
@@ -236,14 +202,6 @@ class App extends Component {
     console.log("working on opening step 3");
   }
 
-  _saveInput3(e) {
-    const update = this.state.tov.slice()
-    this.setState({tov: [...update, e]}, function() {
-      localStorage['stepthree'] = JSON.stringify(this.state.tov);
-    })
-    console.log(e);
-  }
-
   _deleteItem3(i) {
     const update = this.state.tov.slice()
     update.splice( this.state.tov.indexOf(i), 1)
@@ -252,15 +210,6 @@ class App extends Component {
     }, function() {
       localStorage['stepthree'] = JSON.stringify(this.state.tov);
     })
-  }
-
-  _saveItem3(e) {
-    const update = this.state.tov.slice()
-
-    this.setState({tov: [...update, e]}, function() {
-      localStorage['stepthree'] = JSON.stringify(this.state.tov);
-    })
-    console.log(e);
   }
 
   _fourthStep() {
@@ -277,14 +226,6 @@ class App extends Component {
     console.log("working on opening step 3");
   }
 
-  _saveInput4(e) {
-    const update = this.state.pod.slice()
-    this.setState({pod: [...update, e]}, function() {
-      localStorage['stepfour'] = JSON.stringify(this.state.pod);
-    })
-    console.log(e);
-  }
-
   _deleteItem4(i) {
     const update = this.state.pod.slice()
     update.splice( this.state.pod.indexOf(i), 1)
@@ -293,15 +234,6 @@ class App extends Component {
     }, function() {
       localStorage['stepfour'] = JSON.stringify(this.state.pod);
     })
-  }
-
-  _saveItem4(e) {
-    const update = this.state.pod.slice()
-
-    this.setState({pod: [...update, e]}, function() {
-      localStorage['stepfour'] = JSON.stringify(this.state.pod);
-    })
-    console.log(e);
   }
 
   _fifthStep() {
@@ -318,14 +250,6 @@ class App extends Component {
     console.log("working on opening step 5");
   }
 
-  _saveInput5(e) {
-    const update = this.state.names.slice()
-    this.setState({names: [...update, e]}, function() {
-      localStorage['stepfive'] = JSON.stringify(this.state.names);
-    })
-    console.log(e);
-  }
-
   _deleteItem5(i) {
     const update = this.state.names.slice()
     update.splice( this.state.names.indexOf(i), 1)
@@ -334,15 +258,6 @@ class App extends Component {
     }, function() {
       localStorage['stepfive'] = JSON.stringify(this.state.names);
     })
-  }
-
-  _saveItem5(e) {
-    const update = this.state.names.slice()
-
-    this.setState({names: [...update, e]}, function() {
-      localStorage['stepfive'] = JSON.stringify(this.state.names);
-    })
-    console.log(e);
   }
 
   _showPreview() {
@@ -394,15 +309,15 @@ class App extends Component {
 
         {this.state.showHome ? <Home show={() => this._session()} /> : null}
 
-        {this.state.stepOne ? <One value={(e) => this._saveInput(e)} identity={this.state.identity} addItem={(e) => this._saveItem(e, 1)} remove={(i) => this._deleteItem(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
+        {this.state.stepOne ? <One identity={this.state.identity} addItem={(e) => this._saveItem(e, 1)} remove={(i) => this._deleteItem(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
 
-        {this.state.stepTwo ? <Two value={(e) => this._saveInput2(e)} audience={this.state.audience} addItem={(e) => this._saveItem2(e)} remove={(i) => this._deleteItem2(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
+        {this.state.stepTwo ? <Two audience={this.state.audience} addItem={(e) => this._saveItem(e, 2)} remove={(i) => this._deleteItem2(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
 
-        {this.state.stepThree ? <Three value={(e) => this._saveInput3(e)} tov={this.state.tov} addItem={(e) => this._saveItem3(e)} remove={(i) => this._deleteItem3(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
+        {this.state.stepThree ? <Three tov={this.state.tov} addItem={(e) => this._saveItem(e, 3)} remove={(i) => this._deleteItem3(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
 
-        {this.state.stepFour ? <Four value={(e) => this._saveInput4(e)} pod={this.state.pod} addItem={(e) => this._saveItem4(e)} remove={(i) => this._deleteItem4(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
+        {this.state.stepFour ? <Four pod={this.state.pod} addItem={(e) => this._saveItem(e, 4)} remove={(i) => this._deleteItem4(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
 
-        {this.state.stepFive ? <Five value={(e) => this._saveInput5(e)} names={this.state.names} addItem={(e) => this._saveItem5(e)} remove={(i) => this._deleteItem5(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
+        {this.state.stepFive ? <Five names={this.state.names} addItem={(e) => this._saveItem(e, 5)} remove={(i) => this._deleteItem5(i)} backToSteps={this._showSteps} showPreview={this._showPreview} exitScreenOpen={this._exitPopUp} /> : null}
 
         {this.state.sessionPreview ? <Preview identity={this.state.identity} audience={this.state.audience} tov={this.state.tov} pod={this.state.pod} names={this.state.names} backToSteps={this._showSteps} exitScreenOpen={this._exitPopUp} /> : null}
 

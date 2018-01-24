@@ -34,7 +34,7 @@ class Preview extends Component {
     html2canvas(input).then((canvas) => {
     const imgData = canvas.toDataURL('image/png');
     const pdf = new jsPDF();
-    pdf.addImage(imgData, 'JPEG', 10, 10, 180, 110);
+    pdf.addImage(imgData, 'JPEG', 10, 10, 190, 140);
     pdf.save("My_Brand_Session.pdf");
   });
   }

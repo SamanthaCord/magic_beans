@@ -45,7 +45,7 @@ class Three extends Component {
   _handleSubmit(e) {
     e.preventDefault();
     const query = this.state.query;
-    this.props.value(query)
+    this.props.addItem(query)
     this.setState({
       query: ''
     });
