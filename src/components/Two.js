@@ -98,7 +98,7 @@ class Two extends Component {
         <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
         <button className="stepsButton" onClick={this._changeScreen}><div id="steps">Back To Steps</div></button>
         <button className='previewButton' onClick={this._showPreview}>See Session Notes</button>
-        <h1 className="stepMainHeading">AUDIENCE</h1>
+        <h1 className="stepMainHeading">2. AUDIENCE</h1>
         {!this.state.newPhrase ? <h1 className="QuestionHeading">Who is your audience?</h1> : <h1 className="QuestionHeading">{this.state.newPhrase}</h1>}
         <br />
         <button onClick={this._changeHeading} className="refreshButton"><i className="zmdi zmdi-refresh"></i></button>

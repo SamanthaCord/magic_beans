@@ -97,7 +97,7 @@ class One extends Component {
         <button className="exitButton" onClick={this._exitPopUp}><div id="exit">Exit</div></button>
         <button className="stepsButton" onClick={this._changeScreen}><div id="steps">Back To Steps</div></button>
         <button className='previewButton' onClick={this._showPreview}>See Session Notes</button>
-        <h1 className="stepMainHeading">BRAND IDENTITY</h1>
+        <h1 className="stepMainHeading">1. BRAND IDENTITY</h1>
         {!this.state.newPhrase ? <h1 className="QuestionHeading">How do you want your brand to be percieved?</h1> : <h1 className="QuestionHeading">{this.state.newPhrase}</h1>}
         <br />
         <button onClick={this._changeHeading} className="refreshButton"><i className="zmdi zmdi-refresh"></i></button>

@@ -441,7 +441,6 @@ h1 {
   height: 20%;
   bottom: 60px;
   padding: 0;
-  z-index: 99;
 }
 
 #stepNavOne, #stepNavThree, #stepNavFive {
@@ -686,7 +685,7 @@ i.zmdi.zmdi-close-circle {
   bottom: 0;
   left: 0;
   right: 0;
-  position: absolute;
+  position: fixed;
   z-index: 99;
 }
 
@@ -793,29 +792,7 @@ i.zmdi.zmdi-close-circle {
   border-top: 60px black solid;
   z-index: 1;
   margin-bottom: 80px;
-  /* -webkit-animation: slide-up 0.4s;
-  animation: slide-up 0.4s; */
 }
-
-/* @keyframes slide-up {
-  from {
-    margin-top: 100%;
-  }
-
-  to {
-    margin-top: 0%;
-  }
-}
-
- @-webkit-keyframes slide-up {
-   from {
-     margin-top: 100%;
-   }
-
-   to {
-     margin-top: 0%;
-   }
- } */
 
  .previewMainHeading {
    color: black;

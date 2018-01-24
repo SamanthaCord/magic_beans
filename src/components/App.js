@@ -41,8 +41,7 @@ class App extends Component {
       names: [],
       sessionPreview: false,
       exitPopUp: false,
-      closedSession: false,
-      msg: 0
+      closedSession: false
     };
 
     this._session = this._session.bind(this);
@@ -250,6 +249,11 @@ class App extends Component {
       showHome: false,
       closedSession: true,
       sessionPreview: false,
+      stepFive: false,
+      stepFour: false,
+      stepThree: false,
+      stepTwo: false,
+      stepOne: false,
       exitPopUp: false,
       pageCount: 1
     });
